@@ -1,0 +1,10 @@
+{
+  "placeholderImages": [
+    {
+      "id": "sponsor-logo-1",
+      "description": "Placeholder for sponsor logo",
+      "imageUrl": "https://placehold.co/200x80/F2E6D9/241a10?text=Sponsor",
+      "imageHint": "sponsor logo"
+    }
+  ]
+}
