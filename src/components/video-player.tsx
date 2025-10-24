@@ -13,22 +13,22 @@ export default function VideoPlayer({ videoSrc, isOpen, onClose }: VideoPlayerPr
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black"
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-4xl mx-4"
+        className="relative w-screen h-screen"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute -top-10 right-0 text-white hover:text-primary transition-colors z-10"
+          className="absolute top-4 right-4 text-white hover:text-primary transition-colors z-20 bg-black/30 rounded-full p-2"
           aria-label="Close video player"
         >
           <X className="h-8 w-8" />
         </button>
         <video
-          className="w-full h-auto rounded-lg shadow-2xl"
+          className="w-full h-full object-contain"
           src={videoSrc}
           controls
           autoPlay
