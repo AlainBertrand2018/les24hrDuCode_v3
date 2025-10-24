@@ -16,7 +16,7 @@ import { useToast } from '@/hooks/use-toast';
 const translations = {
   en: {
     title: 'Join the Waiting List!',
-    description: 'Register your interest to be the first to know when tickets are available.',
+    description: "Register your interest to be the first to know when Les 24hr du Code is kicking off and live.",
     nameLabel: 'Full Name',
     namePlaceholder: 'Your Name',
     emailLabel: 'Email Address',
@@ -35,7 +35,7 @@ const translations = {
   },
   fr: {
     title: 'Rejoignez la liste d\'attente !',
-    description: 'Inscrivez-vous pour être le premier informé de la disponibilité des billets.',
+    description: "Inscrivez-vous pour être le premier informé du lancement de Les 24hr du Code.",
     nameLabel: 'Nom complet',
     namePlaceholder: 'Votre Nom',
     emailLabel: 'Adresse e-mail',
