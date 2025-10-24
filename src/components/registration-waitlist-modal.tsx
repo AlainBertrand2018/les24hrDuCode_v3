@@ -35,7 +35,7 @@ const translations = {
   },
   fr: {
     title: 'Rejoignez la liste d\'attente !',
-    description: "Inscrivez-vous pour être le premier informé du lancement de Les 24hr du Code.",
+    description: "Inscrivez-vous pour être parmi les premiers informés du lancement des 24hr du Code.",
     nameLabel: 'Nom complet',
     namePlaceholder: 'Votre Nom',
     emailLabel: 'Adresse e-mail',
