@@ -1,20 +1,36 @@
 'use client';
-
+import { useRef, useEffect } from 'react';
 import { X } from 'lucide-react';
 
 interface VideoPlayerProps {
   videoSrc: string;
   isOpen: boolean;
   onClose: () => void;
+  onEnded: () => void;
 }
 
-export default function VideoPlayer({ videoSrc, isOpen, onClose }: VideoPlayerProps) {
+export default function VideoPlayer({ videoSrc, isOpen, onClose, onEnded }: VideoPlayerProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    if (videoElement) {
+      const handleVideoEnd = () => {
+        onEnded();
+      };
+      videoElement.addEventListener('ended', handleVideoEnd);
+
+      return () => {
+        videoElement.removeEventListener('ended', handleVideoEnd);
+      };
+    }
+  }, [onEnded]);
+
   if (!isOpen) return null;
 
   return (
     <div 
       className="fixed inset-0 z-50 flex items-center justify-center bg-black"
-      onClick={onClose}
     >
       <div 
         className="relative w-screen h-screen"
@@ -28,6 +44,7 @@ export default function VideoPlayer({ videoSrc, isOpen, onClose }: VideoPlayerPr
           <X className="h-8 w-8" />
         </button>
         <video
+          ref={videoRef}
           className="w-full h-full object-contain"
           src={videoSrc}
           controls

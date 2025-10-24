@@ -6,20 +6,29 @@ import { Button } from '@/components/ui/button';
 import Countdown from '@/components/countdown';
 import VideoPlayer from './video-player';
 import LanguageModal from './language-modal';
+import RegistrationWaitlistModal from './registration-waitlist-modal';
 
 export default function Hero() {
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
-  const [videoSrc, setVideoSrc] = useState('');
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
+  const [videoSrc, setVideoSrc] = useState('');
+  const [videoLang, setVideoLang] = useState<'en' | 'fr'>('en');
 
   const handleLanguageSelect = (lang: 'en' | 'fr') => {
     const videoUrl = lang === 'en' 
       ? '/videos/Les24hrducode_expl_en_opt.mp4' 
       : '/videos/Les24hrducode_Expl_Fr_opt.mp4';
     
+    setVideoLang(lang);
     setVideoSrc(videoUrl);
     setIsLanguageModalOpen(false);
     setIsVideoModalOpen(true);
+  };
+
+  const handleVideoEnded = () => {
+    setIsVideoModalOpen(false);
+    setIsRegistrationModalOpen(true);
   };
 
   return (
@@ -57,6 +66,13 @@ export default function Hero() {
         videoSrc={videoSrc}
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}
+        onEnded={handleVideoEnded}
+      />
+
+      <RegistrationWaitlistModal
+        isOpen={isRegistrationModalOpen}
+        onClose={() => setIsRegistrationModalOpen(false)}
+        lang={videoLang}
       />
     </>
   );
