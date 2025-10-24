@@ -5,9 +5,22 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Countdown from '@/components/countdown';
 import VideoPlayer from './video-player';
+import LanguageModal from './language-modal';
 
 export default function Hero() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
+  const [videoSrc, setVideoSrc] = useState('');
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
+  const handleLanguageSelect = (lang: 'en' | 'fr') => {
+    const videoUrl = lang === 'en' 
+      ? '/videos/Les24hrducode_expl_en_opt.mp4' 
+      : '/videos/Les24hrducode_Expl_Fr_opt.mp4';
+    
+    setVideoSrc(videoUrl);
+    setIsLanguageModalOpen(false);
+    setIsVideoModalOpen(true);
+  };
 
   return (
     <>
@@ -26,17 +39,24 @@ export default function Hero() {
                 <Countdown />
             </div>
             <div className="w-full max-w-sm space-y-2 mx-auto">
-              <Button onClick={() => setIsModalOpen(true)} size="lg" className="w-full text-lg font-semibold h-12">
+              <Button onClick={() => setIsLanguageModalOpen(true)} size="lg" className="w-full text-lg font-semibold h-12">
                 Learn more
               </Button>
             </div>
           </div>
         </div>
       </section>
+
+      <LanguageModal 
+        isOpen={isLanguageModalOpen}
+        onClose={() => setIsLanguageModalOpen(false)}
+        onSelectLanguage={handleLanguageSelect}
+      />
+      
       <VideoPlayer 
-        videoSrc="/videos/Les24hrducode_expl_en_opt.mp4"
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        videoSrc={videoSrc}
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
       />
     </>
   );
