@@ -89,14 +89,24 @@ export default {
           from: {
             height: 'var(--radix-accordion-content-height)',
           },
-          to: {
+to: {
             height: '0',
           },
+        },
+        'modal-in': {
+          '0%': { opacity: '0', transform: 'scale(.95) translateY(10px)' },
+          '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+        },
+        'modal-out': {
+          '0%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+          '100%': { opacity: '0', transform: 'scale(.95) translateY(10px)' },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'modal-in': 'modal-in 0.3s ease-in-out',
+        'modal-out': 'modal-out 0.3s ease-in-out',
       },
     },
   },
