@@ -25,26 +25,28 @@ export default function LanguageModal({ isOpen, onClose, onSelectLanguage }: Lan
             onClick={() => onSelectLanguage('en')}
             className="group flex flex-col items-center gap-2"
           >
-            <Image
-              src="/images/usa-flag-in-waves-effect.png"
-              alt="English"
-              width={100}
-              height={67}
-              className="rounded-md border-2 border-transparent group-hover:border-primary group-hover:scale-105 transition-transform"
-            />
+            <div className="relative h-[67px] w-[100px]">
+              <Image
+                src="/images/usa-flag-in-waves-effect.png"
+                alt="English"
+                fill
+                className="rounded-md border-2 border-transparent object-cover group-hover:border-primary group-hover:scale-105 transition-transform"
+              />
+            </div>
             <span className="font-medium text-foreground group-hover:text-primary transition-colors">English</span>
           </button>
           <button
             onClick={() => onSelectLanguage('fr')}
             className="group flex flex-col items-center gap-2"
           >
-            <Image
-              src="/images/france-flag-in-waves-effect.png"
-              alt="Français"
-              width={100}
-              height={67}
-              className="rounded-md border-2 border-transparent group-hover:border-primary group-hover:scale-105 transition-transform"
-            />
+             <div className="relative h-[67px] w-[100px]">
+              <Image
+                src="/images/france-flag-in-waves-effect.png"
+                alt="Français"
+                fill
+                className="rounded-md border-2 border-transparent object-cover group-hover:border-primary group-hover:scale-105 transition-transform"
+              />
+            </div>
             <span className="font-medium text-foreground group-hover:text-primary transition-colors">Français</span>
           </button>
         </div>
