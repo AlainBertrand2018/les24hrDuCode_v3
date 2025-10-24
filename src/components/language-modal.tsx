@@ -26,7 +26,7 @@ export default function LanguageModal({ isOpen, onClose, onSelectLanguage }: Lan
             className="group flex flex-col items-center gap-2"
           >
             <Image
-              src="/images/us.webp"
+              src="/images/usa-flag-in-waves-effect.png"
               alt="English"
               width={100}
               height={67}
@@ -39,7 +39,7 @@ export default function LanguageModal({ isOpen, onClose, onSelectLanguage }: Lan
             className="group flex flex-col items-center gap-2"
           >
             <Image
-              src="/images/fr.webp"
+              src="/images/france-flag-in-waves-effect.png"
               alt="Français"
               width={100}
               height={67}
