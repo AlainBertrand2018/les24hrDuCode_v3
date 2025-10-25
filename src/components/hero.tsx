@@ -1,36 +1,11 @@
 'use client'
 
-import { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Countdown from '@/components/countdown';
-import VideoPlayer from './video-player';
-import LanguageModal from './language-modal';
-import RegistrationWaitlistModal from './registration-waitlist-modal';
 
 export default function Hero() {
-  const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
-  const [videoSrc, setVideoSrc] = useState('');
-  const [videoLang, setVideoLang] = useState<'en' | 'fr'>('en');
-
-  const handleLanguageSelect = (lang: 'en' | 'fr') => {
-    const videoUrl = lang === 'en' 
-      ? '/videos/Les24hrducode_expl_en_opt.mp4' 
-      : '/videos/Les24hrducode_Expl_Fr_opt.mp4';
-    
-    setVideoLang(lang);
-    setVideoSrc(videoUrl);
-    setIsLanguageModalOpen(false);
-    setIsVideoModalOpen(true);
-  };
-
-  const handleVideoEnded = () => {
-    setIsVideoModalOpen(false);
-    setIsRegistrationModalOpen(true);
-  };
-
   return (
     <>
       <section className="flex-grow w-full flex items-center justify-center bg-background">
@@ -48,32 +23,13 @@ export default function Hero() {
                 <Countdown />
             </div>
             <div className="w-full max-w-sm space-y-2 mx-auto">
-              <Button onClick={() => setIsLanguageModalOpen(true)} size="lg" className="w-full text-lg font-semibold h-12">
-                Learn more
+              <Button asChild size="lg" className="w-full text-lg font-semibold h-12">
+                <Link href="/home">Learn more</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
-
-      <LanguageModal 
-        isOpen={isLanguageModalOpen}
-        onClose={() => setIsLanguageModalOpen(false)}
-        onSelectLanguage={handleLanguageSelect}
-      />
-      
-      <VideoPlayer 
-        videoSrc={videoSrc}
-        isOpen={isVideoModalOpen}
-        onClose={() => setIsVideoModalOpen(false)}
-        onEnded={handleVideoEnded}
-      />
-
-      <RegistrationWaitlistModal
-        isOpen={isRegistrationModalOpen}
-        onClose={() => setIsRegistrationModalOpen(false)}
-        lang={videoLang}
-      />
     </>
   );
 }

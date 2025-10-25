@@ -3,6 +3,7 @@ import type { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { User, Shield } from 'lucide-react';
+import Link from 'next/link';
 
 type HeaderProps = {
   isAdminView: boolean;
@@ -35,14 +36,16 @@ export default function Header({ isAdminView, setIsAdminView }: HeaderProps) {
             <a href="#sponsors-section" onClick={(e) => handleNavClick(e, 'sponsors-section')} className="hover:text-foreground transition-colors">Sponsors</a>
             <a href="#registration-section" onClick={(e) => handleNavClick(e, 'registration-section')} className="hover:text-foreground transition-colors">Register</a>
         </nav>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setIsAdminView(!isAdminView)}
-          aria-label={isAdminView ? 'Switch to public view' : 'Switch to admin view'}
-        >
-          {isAdminView ? <User className="h-5 w-5" /> : <Shield className="h-5 w-5" />}
-        </Button>
+        <Link href="/admin">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsAdminView(!isAdminView)}
+            aria-label={isAdminView ? 'Switch to public view' : 'Switch to admin view'}
+          >
+            {isAdminView ? <User className="h-5 w-5" /> : <Shield className="h-5 w-5" />}
+          </Button>
+        </Link>
       </div>
     </header>
   );
