@@ -39,11 +39,11 @@ const features = [
 ];
 
 const globalLogos = [
-    { id: 'google', name: 'Google', imageUrl: '/images/partner_logos/goog.webp', imageHint: 'Google logo' },
-    { id: 'microsoft', name: 'Microsoft', imageUrl: '/images/partner_logos/ms.webp', imageHint: 'Microsoft logo' },
-    { id: 'openai', name: 'OpenAI', imageUrl: '/images/partner_logos/openai.webp', imageHint: 'OpenAI logo' },
-    { id: 'mistral', name: 'Mistral', imageUrl: '/images/partner_logos/mistral.webp', imageHint: 'Mistral logo' },
-    { id: 'anthropic', name: 'Anthropic', imageUrl: '/images/partner_logos/anthr.webp', imageHint: 'Anthropic logo' },
+    { id: 'google', name: 'Google', imageUrl: '/images/partner_logos/goog.png', imageHint: 'Google logo' },
+    { id: 'microsoft', name: 'Microsoft', imageUrl: '/images/partner_logos/ms.png', imageHint: 'Microsoft logo' },
+    { id: 'openai', name: 'OpenAI', imageUrl: '/images/partner_logos/openai.png', imageHint: 'OpenAI logo' },
+    { id: 'mistral', name: 'Mistral', imageUrl: '/images/partner_logos/mistral.png', imageHint: 'Mistral logo' },
+    { id: 'anthropic', name: 'Anthropic', imageUrl: '/images/partner_logos/anthr.png', imageHint: 'Anthropic logo' },
 ];
 
 export default function ExpoPage() {
