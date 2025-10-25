@@ -41,7 +41,6 @@ export default function HomePage() {
                     ))}
                 </div>
               </div>
-              <Button variant="link" className="mt-2">See all sponsors &rarr;</Button>
             </div>
           </div>
         </section>
