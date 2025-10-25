@@ -5,6 +5,54 @@
       "description": "Placeholder for sponsor logo",
       "imageUrl": "https://placehold.co/200x80/F2E6D9/241a10?text=Sponsor",
       "imageHint": "sponsor logo"
+    },
+    {
+      "id": "expo-hero",
+      "description": "Hero image for the expo page, showing a modern exhibition booth.",
+      "imageUrl": "https://images.unsplash.com/photo-1691068013150-2c12c876e009?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZXhoaWJpdGlvbiUyMGJvb3RofGVufDB8fHx8MTc2MTI1OTU4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "exhibition booth"
+    },
+    {
+      "id": "expo-venue",
+      "description": "Placeholder for the expo venue floor plan.",
+      "imageUrl": "https://images.unsplash.com/photo-1677617586879-ad2ae3b61099?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxldmVudCUyMGZsb29yJTIwcGxhbnxlbnwwfHx8fDE3NjEzNzY1MTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "event floor plan"
+    },
+    {
+      "id": "company-logo-1",
+      "description": "Placeholder for a company logo in the expo gallery.",
+      "imageUrl": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjEzNDkxODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "company-logo-2",
+      "description": "Placeholder for a company logo in the expo gallery.",
+      "imageUrl": "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjEzNDkxODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "company-logo-3",
+      "description": "Placeholder for a company logo in the expo gallery.",
+      "imageUrl": "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjEzNDkxODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "company-logo-4",
+      "description": "Placeholder for a company logo in the expo gallery.",
+      "imageUrl": "https://images.unsplash.com/photo-1529612700005-e35377bf1415?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjEzNDkxODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "company-logo-5",
+      "description": "Placeholder for a company logo in the expo gallery.",
+      "imageUrl": "https://images.unsplash.com/photo-1529612700005-e35377bf1415?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjEzNDkxODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "company-logo-6",
+      "description": "Placeholder for a company logo in the expo gallery.",
+      "imageUrl": "https://images.unsplash.com/photo-1619551734325-81aaf323686c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjEzNDkxODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "company logo"
     }
   ]
 }
