@@ -18,31 +18,40 @@ export default function HomePage() {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="h-screen flex flex-col justify-center items-center text-center bg-primary/10 relative">
-          <div className="flex-grow flex flex-col justify-center items-center">
-            <h1 className="text-4xl font-bold">Welcome to Les 24hr du Code</h1>
-            <p className="text-lg text-muted-foreground mt-2">The ultimate coding challenge in Mauritius.</p>
-          </div>
-          <div id="sponsors" className="w-full py-8">
-            <div className="container mx-auto text-center">
-              <h2 className="text-2xl font-semibold mb-4">Our Sponsors</h2>
-              <div className="bg-muted rounded-lg p-6">
-                <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
-                    {sponsorLogos.map((logo) => (
-                        <Image 
-                            key={logo.id}
-                            src={logo.imageUrl}
-                            alt={logo.name}
-                            width={140}
-                            height={50}
-                            className="object-contain"
-                            data-ai-hint={logo.imageHint}
-                        />
-                    ))}
-                </div>
-              </div>
+        <section className="h-screen flex flex-col justify-center items-center text-center relative text-primary-foreground">
+            <Image
+                src="/images/home_bk.webp"
+                alt="Hackathon event background"
+                fill
+                className="object-cover blur-sm"
+                priority
+                data-ai-hint="hackathon event"
+            />
+            <div className="absolute inset-0 bg-black/40 z-10" />
+            <div className="relative z-20 flex-grow flex flex-col justify-center items-center container">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">Welcome to Les 24hr du Code</h1>
+              <p className="text-lg md:text-xl text-primary-foreground/90 mt-2">The ultimate coding challenge in Mauritius.</p>
             </div>
-          </div>
+            <div id="sponsors" className="relative z-20 w-full py-8">
+                <div className="container mx-auto text-center">
+                    <h2 className="text-2xl font-semibold mb-4">Our Sponsors</h2>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+                            {sponsorLogos.map((logo) => (
+                                <Image 
+                                    key={logo.id}
+                                    src={logo.imageUrl}
+                                    alt={logo.name}
+                                    width={140}
+                                    height={50}
+                                    className="object-contain"
+                                    data-ai-hint={logo.imageHint}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         {/* About Section */}
