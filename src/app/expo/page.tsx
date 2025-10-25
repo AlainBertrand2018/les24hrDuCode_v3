@@ -38,7 +38,13 @@ const features = [
   },
 ];
 
-const companyLogos = PlaceHolderImages.filter(p => p.id.startsWith('company-logo-'));
+const globalLogos = [
+    { id: 'google', name: 'Google', imageUrl: 'https://picsum.photos/seed/googlelogo/140/50', imageHint: 'Google logo' },
+    { id: 'microsoft', name: 'Microsoft', imageUrl: 'https://picsum.photos/seed/microsoftlogo/140/50', imageHint: 'Microsoft logo' },
+    { id: 'openai', name: 'OpenAI', imageUrl: 'https://picsum.photos/seed/openailogo/140/50', imageHint: 'OpenAI logo' },
+    { id: 'mistral', name: 'Mistral', imageUrl: 'https://picsum.photos/seed/mistrallogo/140/50', imageHint: 'Mistral logo' },
+    { id: 'anthropic', name: 'Anthropic', imageUrl: 'https://picsum.photos/seed/anthropiclogo/140/50', imageHint: 'Anthropic logo' },
+];
 
 export default function ExpoPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -154,13 +160,13 @@ export default function ExpoPage() {
                 Our exhibition space is a curated showcase of the best in the industry.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
-                {companyLogos.map((logo) => (
+                {globalLogos.map((logo) => (
                     <Image 
                         key={logo.id}
                         src={logo.imageUrl}
-                        alt={logo.description}
-                        width={160}
-                        height={80}
+                        alt={logo.name}
+                        width={140}
+                        height={50}
                         className="object-contain"
                         data-ai-hint={logo.imageHint}
                     />
@@ -247,3 +253,5 @@ export default function ExpoPage() {
     </div>
   );
 }
+
+    
