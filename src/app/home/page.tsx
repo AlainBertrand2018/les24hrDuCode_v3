@@ -35,7 +35,7 @@ export default function HomePage() {
             <div id="sponsors" className="relative z-20 w-full py-8">
                 <div className="container mx-auto text-center">
                     <h2 className="text-2xl font-semibold mb-4">Our Sponsors</h2>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                    <div className="p-6">
                         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
                             {sponsorLogos.map((logo) => (
                                 <Image 
