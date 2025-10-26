@@ -55,15 +55,15 @@ export const MOCK_SPONSORS: Sponsor[] = [
   },
   {
     id: 'd2',
-    name: 'Dell',
-    tier: 'Diamond',
-    logo_url: '/images/logos/Dell_Logo.png',
-  },
-  {
-    id: 'd3',
     name: 'Vercel',
     tier: 'Diamond',
     logo_url: '/images/logos/vercel.png',
+  },
+  {
+    id: 'd3',
+    name: 'Dell',
+    tier: 'Diamond',
+    logo_url: '/images/logos/Dell_Logo.png',
   },
   { id: 'p1', name: 'Google', tier: 'Platinum', logo_url: '/images/logos/goog_transp.png' },
   { id: 'p2', name: 'Microsoft', tier: 'Platinum', logo_url: '/images/logos/ms_transp.png' },
@@ -88,8 +88,3 @@ export const MOCK_SPONSORS: Sponsor[] = [
   { id: 's7', name: 'Silver Sponsor 7', tier: 'Silver', logo_url: 'https://picsum.photos/seed/silver7/200/80' },
   { id: 's8', name: 'Silver Sponsor 8', tier: 'Silver', logo_url: 'https://picsum.photos/seed/silver8/200/80' },
 ];
-
-
-
-
-
