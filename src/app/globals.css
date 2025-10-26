@@ -84,3 +84,20 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+@layer utilities {
+  .marquee {
+    @apply relative flex w-full overflow-hidden;
+  }
+  .marquee-content {
+    @apply flex w-max animate-scroll items-center gap-12 px-6;
+  }
+  .marquee:hover .marquee-content {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+}

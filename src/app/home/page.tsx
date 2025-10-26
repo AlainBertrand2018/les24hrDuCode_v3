@@ -3,14 +3,7 @@ import Header from '@/components/header-main';
 import Footer from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-
-const sponsorLogos = [
-    { id: 'google', name: 'Google', imageUrl: '/images/logos/goog_transp.png', imageHint: 'Google logo' },
-    { id: 'microsoft', name: 'Microsoft', imageUrl: '/images/logos/ms_transp.png', imageHint: 'Microsoft logo' },
-    { id: 'openai', name: 'OpenAI', imageUrl: '/images/logos/openai_wht_transp.png', imageHint: 'OpenAI logo' },
-    { id: 'mistral', name: 'Mistral', imageUrl: '/images/logos/mistral_wht_transp.png', imageHint: 'Mistral logo' },
-    { id: 'anthropic', name: 'Anthropic', imageUrl: '/images/logos/anthr_transp.png', imageHint: 'Anthropic logo' },
-];
+import LogoMarquee from '@/components/logo-marquee';
 
 export default function HomePage() {
   return (
@@ -34,22 +27,8 @@ export default function HomePage() {
             </div>
             <div id="sponsors" className="relative z-20 w-full py-8">
                 <div className="container mx-auto text-center">
-                    <h2 className="text-xl font-semibold mb-4">with</h2>
-                    <div className="p-6">
-                        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
-                            {sponsorLogos.map((logo) => (
-                                <Image 
-                                    key={logo.id}
-                                    src={logo.imageUrl}
-                                    alt={logo.name}
-                                    width={140}
-                                    height={50}
-                                    className="object-contain"
-                                    data-ai-hint={logo.imageHint}
-                                />
-                            ))}
-                        </div>
-                    </div>
+                    <h2 className="text-xl font-semibold mb-8 text-primary-foreground/90">Our Partners &amp; Sponsors</h2>
+                    <LogoMarquee />
                 </div>
             </div>
         </section>
