@@ -1,15 +1,17 @@
 'use client';
+import { useState, useEffect } from 'react';
 import Header from '@/components/header-main';
 import Footer from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import LogoMarquee from '@/components/logo-marquee';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import LanguageModal from '@/components/language-modal';
+import VideoPlayer from '@/components/video-player';
 
 const faqItems = [
     {
@@ -30,7 +32,31 @@ const faqItems = [
     },
 ]
 
+const videoUrls = {
+    en: '/videos/Les24hrducode_expl_en_opt.mp4',
+    fr: '/videos/Les24hrducode_Expl_Fr_opt.mp4',
+};
+
 export default function HomePage() {
+  const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
+  const [isVideoPlayerOpen, setIsVideoPlayerOpen] = useState(false);
+  const [videoSrc, setVideoSrc] = useState('');
+
+  useEffect(() => {
+    // Open the language modal on initial load
+    setIsLanguageModalOpen(true);
+  }, []);
+
+  const handleSelectLanguage = (lang: 'en' | 'fr') => {
+    setVideoSrc(videoUrls[lang]);
+    setIsLanguageModalOpen(false);
+    setIsVideoPlayerOpen(true);
+  };
+  
+  const handleVideoClose = () => {
+    setIsVideoPlayerOpen(false);
+    setVideoSrc('');
+  };
   
   return (
     <>
@@ -158,6 +184,17 @@ export default function HomePage() {
         </section>
       </main>
       <Footer />
+      <LanguageModal
+        isOpen={isLanguageModalOpen}
+        onClose={() => setIsLanguageModalOpen(false)}
+        onSelectLanguage={handleSelectLanguage}
+      />
+      <VideoPlayer
+        isOpen={isVideoPlayerOpen}
+        onClose={handleVideoClose}
+        onEnded={handleVideoClose}
+        videoSrc={videoSrc}
+      />
     </>
   );
 }
