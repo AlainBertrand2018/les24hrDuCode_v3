@@ -14,7 +14,6 @@ const mockTeams: Team[] = [
     members: [
       { name: 'Alice', avatarUrl: 'https://picsum.photos/seed/1/40' },
       { name: 'Bob', avatarUrl: 'https://picsum.photos/seed/2/40' },
-      { name: 'Charlie', avatarUrl: 'https://picsum.photos/seed/3/40' },
     ],
   },
   {
@@ -24,7 +23,6 @@ const mockTeams: Team[] = [
     members: [
       { name: 'Diana', avatarUrl: 'https://picsum.photos/seed/4/40' },
       { name: 'Eve', avatarUrl: 'https://picsum.photos/seed/5/40' },
-      { name: 'Frank', avatarUrl: 'https://picsum.photos/seed/6/40' },
     ],
   },
   {
@@ -43,8 +41,6 @@ const mockTeams: Team[] = [
     members: [
       { name: 'Ivan', avatarUrl: 'https://picsum.photos/seed/9/40' },
       { name: 'Judy', avatarUrl: 'https://picsum.photos/seed/10/40' },
-      { name: 'Mallory', avatarUrl: 'https://picsum.photos/seed/11/40' },
-       { name: 'Niaj', avatarUrl: 'https://picsum.photos/seed/12/40' },
     ],
   },
 ];
