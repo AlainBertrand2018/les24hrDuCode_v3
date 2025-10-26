@@ -9,7 +9,7 @@ const sponsorLogos = [
     { id: 'microsoft', name: 'Microsoft', imageUrl: '/images/logos/ms_transp.png', imageHint: 'Microsoft logo' },
     { id: 'openai', name: 'OpenAI', imageUrl: '/images/logos/openai_wht_transp.png', imageHint: 'OpenAI logo' },
     { id: 'mistral', name: 'Mistral', imageUrl: '/images/logos/mistral_wht_transp.png', imageHint: 'Mistral logo' },
-    { id: 'anthropic', name: 'Anthropic', imageUrl: '/images/logos/anthr_wht_transp.png', imageHint: 'Anthropic logo' },
+    { id: 'anthropic', name: 'Anthropic', imageUrl: '/images/logos/anthr_transp.png', imageHint: 'Anthropic logo' },
 ];
 
 export default function HomePage() {
