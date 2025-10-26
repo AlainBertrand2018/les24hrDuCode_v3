@@ -106,7 +106,7 @@ export default function SponsorsPage() {
                     <div className={cn('grid gap-4 items-center justify-items-center', styles.gridClass)}>
                       {sponsors.map(sponsor => (
                         <div key={sponsor.id} className={cn("w-full bg-card p-6 flex flex-col justify-center items-center aspect-square transition-colors rounded-lg shadow-sm hover:shadow-primary/20", styles.cardClass)}>
-                           <div className="h-full flex items-center justify-center">
+                           <div className="flex-grow flex items-center justify-center">
                               <Image 
                                 src={sponsor.logo_url || ''}
                                 alt={`${sponsor.name} Logo`}
@@ -116,7 +116,7 @@ export default function SponsorsPage() {
                               />
                            </div>
                            {tier === 'Diamond' && (
-                               <p className="text-sm mt-2 text-primary font-semibold">{sponsor.name}</p>
+                               <p className="text-sm mt-2 text-primary font-semibold text-center">{sponsor.name}</p>
                            )}
                         </div>
                       ))}
