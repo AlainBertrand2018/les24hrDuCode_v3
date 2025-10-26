@@ -115,6 +115,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'modal-in': 'modal-in 0.25s ease-out',
         'modal-out': 'modal-out 0.25s ease-in',
+        'scroll-right-to-left': 'scroll-right-to-left 45s linear infinite',
       },
     },
   },
