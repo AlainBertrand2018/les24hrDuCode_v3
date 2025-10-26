@@ -113,6 +113,17 @@ export default function TeamsPage() {
             </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="w-full py-20 md:py-32 bg-primary/10">
+        <div className="container px-4 md:px-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Ready to Join the Challenge?</h2>
+            <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">
+                Register your team now and be part of the innovation.
+            </p>
+            <Button size="lg" className="mt-8">Register Your Team</Button>
+        </div>
+      </section>
     </div>
   );
 }
