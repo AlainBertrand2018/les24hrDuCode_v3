@@ -20,64 +20,65 @@ const logos = [
   { src: '/images/logos/maubank_logo.png', alt: 'MauBank Logo' },
 ];
 
-// Ensure we have a multiple of 5, or handle the remainder gracefully
 const CHUNK_SIZE = 5;
-const logoChunks: typeof logos[] = [];
+const logoChunks: typeof logos[][] = [];
 for (let i = 0; i < logos.length; i += CHUNK_SIZE) {
     logoChunks.push(logos.slice(i, i + CHUNK_SIZE));
-}
-// Pad the last chunk if it's not full
-const lastChunk = logoChunks[logoChunks.length - 1];
-if (lastChunk && lastChunk.length < CHUNK_SIZE) {
-    const missing = CHUNK_SIZE - lastChunk.length;
-    for (let i = 0; i < missing; i++) {
-        lastChunk.push({ src: '', alt: '' }); // Push empty items for spacing
-    }
 }
 
 export default function LogoFader() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isFading, setIsFading] = useState(false);
+  const [animationState, setAnimationState] = useState('visible'); // 'visible', 'exiting'
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsFading(true);
+      setAnimationState('exiting');
+      
+      // Wait for exit animation to finish before changing index and starting enter animation
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % logoChunks.length);
-        setIsFading(false);
-      }, 500); // Fade out duration
-    }, 3000); // 3 seconds visible
+        setAnimationState('visible');
+      }, 500); // This should match the animation duration
+
+    }, 3500); // 3 seconds visible + 0.5s transition
 
     return () => clearInterval(interval);
   }, []);
 
-  const currentLogos = logoChunks[currentIndex];
-
   return (
-    <div className="w-full h-[120px] bg-black/20 flex items-center justify-center">
-      <div
-        className={cn(
-          "grid grid-cols-5 gap-x-8 w-full max-w-6xl items-center justify-items-center transition-opacity duration-500",
-          isFading ? 'opacity-0' : 'opacity-100'
-        )}
-      >
-        {currentLogos.map((logo, index) => (
-          <div key={index} className="h-full flex items-center justify-center p-2">
-            {logo.src ? (
-                <div className="relative h-full w-full max-h-[80px]">
-                    <Image
-                        src={logo.src}
-                        alt={logo.alt}
-                        fill
-                        className="object-contain"
-                    />
-                </div>
-            ) : (
-                <div className="w-full h-full"/> // Placeholder for empty slots
-            )}
-          </div>
+    <div className="w-full h-[120px] bg-black/20 flex items-center justify-center relative overflow-hidden">
+        {logoChunks.map((chunk, index) => (
+             <div
+                key={index}
+                className={cn(
+                  "grid grid-cols-5 gap-x-8 w-full max-w-6xl items-center justify-items-center absolute transition-transform duration-500 ease-in-out",
+                  {
+                    'animate-slide-in': index === currentIndex && animationState === 'visible',
+                    'animate-slide-out': index === (currentIndex - 1 + logoChunks.length) % logoChunks.length && animationState === 'exiting',
+                    'translate-x-full': index !== currentIndex,
+                    'translate-x-0': index === currentIndex,
+                    '-translate-x-full': index < currentIndex,
+                  }
+                )}
+             >
+                {chunk.map((logo, logoIndex) => (
+                    <div key={logoIndex} className="h-full flex items-center justify-center p-2">
+                        {logo.src ? (
+                            <div className="relative h-full w-full max-h-[80px]">
+                                <Image
+                                    src={logo.src}
+                                    alt={logo.alt}
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
+                        ) : (
+                            <div className="w-full h-full"/>
+                        )}
+                    </div>
+                ))}
+             </div>
         ))}
-      </div>
     </div>
   );
 }

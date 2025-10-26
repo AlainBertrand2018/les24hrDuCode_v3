@@ -101,12 +101,22 @@ export default {
           '0%': { opacity: '1' },
           '100%': { opacity: '0' },
         },
+        'slide-in': {
+          from: { transform: 'translateX(100%)' },
+          to: { transform: 'translateX(0)' },
+        },
+        'slide-out': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'modal-in': 'modal-in 0.25s ease-out',
         'modal-out': 'modal-out 0.25s ease-in',
+        'slide-in': 'slide-in 0.5s ease-in-out',
+        'slide-out': 'slide-out 0.5s ease-in-out',
       },
     },
   },
