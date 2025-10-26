@@ -14,6 +14,10 @@ export default function LanguageModal({ isOpen, onClose, onSelectLanguage }: Lan
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-3xl bg-background">
+        <DialogHeader className="sr-only">
+          <DialogTitle>Choose Language</DialogTitle>
+          <DialogDescription>Select your preferred language to watch the explainer video.</DialogDescription>
+        </DialogHeader>
         <div className="flex justify-around items-start gap-8 py-4 text-center">
           <div className="flex flex-col items-center gap-4">
             <p className="text-sm text-muted-foreground max-w-xs">
