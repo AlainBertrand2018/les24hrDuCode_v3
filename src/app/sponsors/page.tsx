@@ -114,6 +114,7 @@ export default function SponsorsPage() {
                                 className="object-contain"
                               />
                            </div>
+                           <p className="text-center text-sm font-medium text-muted-foreground mt-4">{sponsor.name}</p>
                         </div>
                       ))}
                     </div>
