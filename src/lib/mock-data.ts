@@ -65,6 +65,12 @@ export const MOCK_SPONSORS: Sponsor[] = [
     tier: 'Diamond',
     logo_url: '/images/logos/Dell_Logo.png',
   },
+  {
+    id: 'd4',
+    name: 'Le Labourdonnais Hotel',
+    tier: 'Diamond',
+    logo_url: '/images/logos/le_labourdonnais_logo.png',
+  },
   { id: 'p1', name: 'Google Gemini', tier: 'Platinum', logo_url: '/images/logos/Google_Gemini_logo.png' },
   { id: 'p2', name: 'Microsoft Azure', tier: 'Platinum', logo_url: '/images/logos/microsoft_azure.png' },
   { id: 'p3', name: 'OpenAI', tier: 'Platinum', logo_url: '/images/logos/openai_transp.png' },
