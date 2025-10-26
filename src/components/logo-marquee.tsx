@@ -20,7 +20,7 @@ const logos = [
 
 export default function LogoMarquee() {
   return (
-    <Marquee pauseOnHover speed={55}>
+    <Marquee pauseOnHover speed={75}>
         <div className="flex items-center">
         {[...logos, ...logos].map((logo, index) => (
             <div key={`${logo.id}-${index}`} className="mx-8 flex justify-center items-center h-32">
