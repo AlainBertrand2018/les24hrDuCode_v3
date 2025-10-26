@@ -24,7 +24,7 @@ export default function LogoMarquee() {
     <div className="marquee">
       <div className="marquee-content" style={{ animationDuration: '60s' }}>
         {extendedLogos.map((logo, index) => (
-          <div key={`${logo.id}-${index}`} className="flex-shrink-0" style={{ height: '50px' }}>
+          <div key={`${logo.id}-${index}`} className="flex-shrink-0" style={{ width: '20%', height: '50px' }}>
             <Image
               src={logo.path}
               alt={`Sponsor Logo ${logo.id}`}
