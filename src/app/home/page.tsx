@@ -42,31 +42,33 @@ export default function HomePage() {
               <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">Welcome to Les 24hr du Code</h1>
               <p className="text-lg md:text-xl text-primary-foreground/90 mt-2">The ultimate coding challenge in Mauritius.</p>
             </div>
-            <div id="sponsors" className="relative z-20 w-full py-8">
-                <div className="container mx-auto text-center">
-                    <h2 className="text-xl font-semibold mb-8 text-primary-foreground/90">Our Partners &amp; Sponsors</h2>
-                    <div className="w-full h-[120px] bg-black/20 flex items-center justify-center overflow-hidden">
-                       <div className="grid grid-cols-5 gap-x-8 w-full max-w-6xl items-center justify-items-center">
-                         {firstFiveLogos.map((logo, index) => (
-                           <div key={index} className="h-full flex items-center justify-center p-2">
-                             <div className="relative h-full w-full max-h-[80px]">
-                               <Image
-                                 src={logo.src}
-                                 alt={logo.alt}
-                                 fill
-                                 className="object-contain"
-                               />
-                             </div>
-                           </div>
-                         ))}
-                       </div>
+        </section>
+
+        {/* Sponsors Section */}
+        <section id="sponsors" className="w-full py-16 md:py-24 bg-card">
+          <div className="container mx-auto text-center">
+            <h2 className="text-xl font-semibold mb-8">Our Partners &amp; Sponsors</h2>
+            <div className="w-full max-w-6xl mx-auto flex items-center justify-center">
+              <div className="grid grid-cols-5 gap-x-8 w-full items-center justify-items-center">
+                {firstFiveLogos.map((logo, index) => (
+                  <div key={index} className="h-full flex items-center justify-center p-2">
+                    <div className="relative h-full w-full max-h-[80px]">
+                      <Image
+                        src={logo.src}
+                        alt={logo.alt}
+                        fill
+                        className="object-contain"
+                      />
                     </div>
-                </div>
+                  </div>
+                ))}
+              </div>
             </div>
+          </div>
         </section>
 
         {/* About Section */}
-        <section id="about" className="h-screen flex flex-col justify-center items-center bg-card">
+        <section id="about" className="h-screen flex flex-col justify-center items-center bg-background">
           <div className="container mx-auto text-center max-w-3xl">
             <h2 className="text-3xl font-bold">What is "Les 24hr du Code"?</h2>
             <p className="text-muted-foreground mt-4">
@@ -77,7 +79,7 @@ export default function HomePage() {
         </section>
         
         {/* Register Your Team Section */}
-        <section id="teams" className="h-screen flex flex-col justify-center items-center bg-background">
+        <section id="teams" className="h-screen flex flex-col justify-center items-center bg-card">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Register Your Team</h2>
             <p className="text-muted-foreground mt-4">Ready to take on the challenge? Form your team and get ready to build something amazing.</p>
@@ -87,7 +89,7 @@ export default function HomePage() {
         </section>
 
         {/* Timeline Section */}
-        <section id="schedule" className="h-screen flex flex-col justify-center items-center bg-card">
+        <section id="schedule" className="h-screen flex flex-col justify-center items-center bg-background">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Event Timeline</h2>
              <p className="text-muted-foreground mt-4">Key dates and events for the competition.</p>
@@ -99,7 +101,7 @@ export default function HomePage() {
         </section>
         
         {/* Speakers Section */}
-        <section id="speakers" className="h-screen flex flex-col justify-center items-center bg-background">
+        <section id="speakers" className="h-screen flex flex-col justify-center items-center bg-card">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Featured Speakers</h2>
              <p className="text-muted-foreground mt-4">Learn from industry leaders and experts.</p>
@@ -111,7 +113,7 @@ export default function HomePage() {
         </section>
 
         {/* Mentors Section */}
-        <section id="mentors" className="h-screen flex flex-col justify-center items-center bg-card">
+        <section id="mentors" className="h-screen flex flex-col justify-center items-center bg-background">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Our Mentors</h2>
              <p className="text-muted-foreground mt-4">Get guidance from experienced professionals.</p>
@@ -123,7 +125,7 @@ export default function HomePage() {
         </section>
         
         {/* Blog Section */}
-        <section id="blog" className="h-screen flex flex-col justify-center items-center bg-background">
+        <section id="blog" className="h-screen flex flex-col justify-center items-center bg-card">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Latest Articles</h2>
              <p className="text-muted-foreground mt-4">News and updates from the team.</p>
