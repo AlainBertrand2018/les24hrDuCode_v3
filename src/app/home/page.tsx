@@ -3,7 +3,6 @@ import Header from '@/components/header-main';
 import Footer from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import LogoMarquee from '@/components/logo-marquee';
 
 export default function HomePage() {
   return (
@@ -28,7 +27,9 @@ export default function HomePage() {
             <div id="sponsors" className="relative z-20 w-full py-8">
                 <div className="container mx-auto text-center">
                     <h2 className="text-xl font-semibold mb-8 text-primary-foreground/90">Our Partners &amp; Sponsors</h2>
-                    <LogoMarquee />
+                    <div className="h-20 flex items-center justify-center bg-black/20 rounded-lg">
+                        <p className="text-primary-foreground/70">[Sponsor logos will be here]</p>
+                    </div>
                 </div>
             </div>
         </section>
