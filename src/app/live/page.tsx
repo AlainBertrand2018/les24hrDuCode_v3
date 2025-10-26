@@ -1,6 +1,7 @@
 'use client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 
 const mockLiveFeed = [
   {
@@ -75,6 +76,17 @@ export default function LiveFeedPage() {
                         </Card>
                     ))}
                 </div>
+            </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="w-full py-20 md:py-32 bg-primary/10">
+            <div className="container px-4 md:px-6 text-center">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Inspired to Join the Action?</h2>
+                <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">
+                    Don't just watch, participate! Register your team for the next edition and be part of the innovation.
+                </p>
+                <Button size="lg" className="mt-8">Register Your Team</Button>
             </div>
         </section>
     </div>
