@@ -23,6 +23,7 @@ import {
   DialogTrigger,
   DialogFooter,
   DialogClose,
+  DialogDescription,
 } from '@/components/ui/dialog';
 import {
   AlertDialog,
@@ -122,6 +123,9 @@ export default function ScheduleManager() {
             <DialogContent>
               <DialogHeader>
                 <DialogTitle>{editingSchedule ? 'Edit Session' : 'Add New Session'}</DialogTitle>
+                <DialogDescription>
+                  {editingSchedule ? 'Update the details for this session.' : 'Create a new session for the event schedule.'}
+                </DialogDescription>
               </DialogHeader>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

@@ -23,6 +23,7 @@ import {
   DialogTrigger,
   DialogFooter,
   DialogClose,
+  DialogDescription,
 } from '@/components/ui/dialog';
 import {
   AlertDialog,
@@ -57,7 +58,7 @@ import { MOCK_SPONSORS } from '@/lib/mock-data';
 
 const sponsorSchema = z.object({
   name: z.string().min(2, 'Sponsor name is required'),
-  tier: z.enum(['Gold', 'Silver', 'Bronze']),
+  tier: z.enum(['Gold', 'Silver', 'Bronze', 'Platinum', 'Diamond']),
   logo_url: z.string().url('Must be a valid URL').or(z.literal('')),
 });
 
@@ -122,6 +123,9 @@ export default function SponsorManager() {
             <DialogContent>
               <DialogHeader>
                 <DialogTitle>{editingSponsor ? 'Edit Sponsor' : 'Add New Sponsor'}</DialogTitle>
+                 <DialogDescription>
+                  {editingSponsor ? 'Update the details for this sponsor.' : 'Add a new sponsor to the event.'}
+                </DialogDescription>
               </DialogHeader>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -134,9 +138,11 @@ export default function SponsorManager() {
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl><SelectTrigger><SelectValue /></SelectTrigger></FormControl>
                         <SelectContent>
-                          <SelectItem value="Bronze">Bronze</SelectItem>
-                          <SelectItem value="Silver">Silver</SelectItem>
+                          <SelectItem value="Diamond">Diamond</SelectItem>
+                          <SelectItem value="Platinum">Platinum</SelectItem>
                           <SelectItem value="Gold">Gold</SelectItem>
+                          <SelectItem value="Silver">Silver</SelectItem>
+                          <SelectItem value="Bronze">Bronze</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
