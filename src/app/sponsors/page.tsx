@@ -17,12 +17,12 @@ const tierStyles: Record<Sponsor['tier'], { gridClass: string; imageSize: { widt
     label: 'Diamond Partners',
   },
   'Platinum': {
-    gridClass: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+    gridClass: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4',
     imageSize: { width: 200, height: 80 },
     label: 'Platinum Sponsors',
   },
   'Gold': {
-    gridClass: 'grid-cols-2 md:grid-cols-3',
+    gridClass: 'grid-cols-2 md:grid-cols-4',
     imageSize: { width: 180, height: 70 },
     label: 'Gold Sponsors',
   },
