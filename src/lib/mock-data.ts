@@ -61,7 +61,7 @@ export const MOCK_SPONSORS: Sponsor[] = [
   },
   {
     id: 'd3',
-    name: 'Dell',
+    name: 'Dell - Official Supplier',
     tier: 'Diamond',
     logo_url: '/images/logos/Dell_Logo.png',
   },
