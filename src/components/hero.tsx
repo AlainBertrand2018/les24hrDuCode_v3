@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-8 text-center">
             <Image
-              src="/images/24hr_logo.webp"
+              src="/images/Base_Logo_dk.png"
               alt="Les 24hr du Code Logo"
               width={585}
               height={585}

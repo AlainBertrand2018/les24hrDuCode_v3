@@ -24,7 +24,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
             <Link href="/home" className="flex items-center gap-3">
               <Image
-                src="/images/24hr_logo.webp"
+                src="/images/Base_Logo_dk.png"
                 alt="Les 24hr du Code Logo"
                 width={32}
                 height={32}

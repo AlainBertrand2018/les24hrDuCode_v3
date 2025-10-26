@@ -21,7 +21,7 @@ export default function Header({ isAdminView, setIsAdminView }: HeaderProps) {
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
         <div className="flex items-center gap-3">
           <Image
-            src="/images/24hr_logo.webp"
+            src="/images/Base_Logo_dk.png"
             alt="Les 24hr du Code Logo"
             width={32}
             height={32}
