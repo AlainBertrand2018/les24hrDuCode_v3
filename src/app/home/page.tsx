@@ -52,12 +52,6 @@ export default function HomePage() {
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">Welcome to Les 24hr du Code</h1>
                 <p className="text-lg md:text-xl text-primary-foreground/90 mt-2">The ultimate coding challenge in Mauritius.</p>
               </div>
-              <div className="pb-16 w-full">
-                  <div className="container">
-                    <h2 className="text-xl font-semibold mb-8">Our Partners &amp; Sponsors</h2>
-                  </div>
-                  <LogoMarquee />
-              </div>
             </div>
         </section>
 
