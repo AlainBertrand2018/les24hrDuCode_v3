@@ -101,6 +101,14 @@ export default {
           '0%': { opacity: '1' },
           '100%': { opacity: '0' },
         },
+        'scroll-right-to-left': {
+          '0%': {
+            transform: 'translateX(0%)',
+          },
+          '100%': {
+            transform: 'translateX(-260vw)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
