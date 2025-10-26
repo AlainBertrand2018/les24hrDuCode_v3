@@ -10,7 +10,7 @@ const logos = [
     { id: 'p1', name: 'Google Gemini', logo_url: '/images/logos/google_gemini_marqueeLogo.png' },
     { id: 'p2', name: 'Microsoft Azure', logo_url: '/images/logos/msAzure_marqueeLogo.png' },
     { id: 'p3', name: 'OpenAI', logo_url: '/images/logos/openai_marqueeLogo.png' },
-    { id: 'p4', name: 'Mistral AI', logo_url: '/images/logos/mistral_wht_transp.png' },
+    { id: 'p4', name: 'Mistral AI', logo_url: '/images/logos/mistral_marqueeLogo.png' },
     { id: 'p5', name: 'Anthropic', logo_url: '/images/logos/anthropic_marqueeLogo.png' },
     { id: 'p6', name: 'Vercel', logo_url: '/images/logos/vercel_wht_bk.png' },
     { id: 'g1', name: 'Emtel', logo_url: '/images/logos/emtel_logo_wht.png' },
