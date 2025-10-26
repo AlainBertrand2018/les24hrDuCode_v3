@@ -1,3 +1,4 @@
+
 import type { Schedule, Sponsor } from './types';
 
 export const MOCK_SCHEDULE: Schedule[] = [
@@ -50,7 +51,7 @@ export const MOCK_SPONSORS: Sponsor[] = [
     id: 'd1',
     name: 'Ministry of Information Technology, Communication and Innovation',
     tier: 'Diamond',
-    logo_url: 'https://picsum.photos/seed/mitci/300/120',
+    logo_url: '/images/Coat_of_arms_of_Mauritius_(Original_version).svg.png',
   },
   {
     id: 'd2',
