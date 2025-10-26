@@ -15,7 +15,6 @@ const tierStyles: Record<Sponsor['tier'], { gridClass: string; imageSize: { widt
     gridClass: 'grid-cols-1',
     imageSize: { width: 250, height: 100 },
     label: 'Title Partner',
-    cardClass: 'bg-primary/10 border-primary'
   },
   'Platinum': {
     gridClass: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
