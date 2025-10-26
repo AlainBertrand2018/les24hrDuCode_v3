@@ -9,7 +9,7 @@ export default function ScheduleLayout({
   return (
     <>
       <Header />
-      <main className="flex-grow bg-background py-12 md:py-24">
+      <main className="flex-grow bg-background">
         {children}
       </main>
       <Footer />
