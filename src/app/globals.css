@@ -90,16 +90,13 @@
     @apply relative flex w-full overflow-hidden;
   }
   .marquee-content {
-    @apply flex w-max animate-scroll items-center gap-8 px-8;
+    @apply flex w-max items-center gap-8 px-8;
+    animation: scroll 60s linear infinite;
     flex-shrink: 0;
     justify-content: space-around;
     min-width: 100%;
   }
   .marquee:hover .marquee-content {
     animation-play-state: paused;
-  }
-
-  .animate-scroll {
-    animation: scroll 60s linear infinite;
   }
 }
