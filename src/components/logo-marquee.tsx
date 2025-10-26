@@ -23,13 +23,13 @@ export default function LogoMarquee() {
     <Marquee pauseOnHover speed={50}>
         <div className="flex items-center">
         {[...logos, ...logos].map((logo, index) => (
-            <div key={`${logo.id}-${index}`} className="mx-8 flex justify-center items-center h-24">
+            <div key={`${logo.id}-${index}`} className="mx-8 flex justify-center items-center h-32">
                 <Image
                     src={logo.logo_url}
                     alt={logo.name}
-                    width={180}
-                    height={70}
-                    className="object-contain max-h-20"
+                    width={234}
+                    height={91}
+                    className="object-contain max-h-28"
                 />
             </div>
         ))}
