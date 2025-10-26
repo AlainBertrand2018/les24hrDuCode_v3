@@ -12,7 +12,7 @@ const logos = [
     { id: 'p3', name: 'OpenAI', logo_url: '/images/logos/openai_wht_transp.png' },
     { id: 'p4', name: 'Mistral AI', logo_url: '/images/logos/mistral_wht_transp.png' },
     { id: 'p5', name: 'Anthropic', logo_url: '/images/logos/anthr_wht_transp.png' },
-    { id: 'p6', name: 'Vercel', logo_url: '/images/logos/vercel.png' },
+    { id: 'p6', name: 'Vercel', logo_url: '/images/logos/vercel_wht_bk.png' },
     { id: 'g1', name: 'Emtel', logo_url: '/images/logos/emtel_logo_wht.png' },
     { id: 'g2', name: 'Mauritius Telecom', logo_url: '/images/logos/mt_logo.png' },
     { id: 'g3', name: 'MauBank', logo_url: '/images/logos/maubank_logo.png' },
