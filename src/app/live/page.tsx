@@ -32,9 +32,9 @@ export default function LiveFeedPage() {
   return (
     <div className="flex flex-col">
         {/* Media Player Section */}
-        <section className="h-screen w-full flex items-center justify-center bg-black text-white">
+        <section className="w-full bg-black">
              {/* In a real scenario, this would be a live video stream component */}
-            <div className="aspect-video w-full max-w-6xl bg-muted/20 flex items-center justify-center">
+            <div className="aspect-video w-full max-w-6xl mx-auto bg-black flex items-center justify-center">
                  <video
                     className="w-full h-full object-contain"
                     src="https://storage.googleapis.com/test-utils-public/Les24hrducode_expl_en_opt.mp4"
