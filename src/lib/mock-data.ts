@@ -55,9 +55,9 @@ export const MOCK_SPONSORS: Sponsor[] = [
   },
   {
     id: 'd2',
-    name: 'Vercel',
+    name: 'Economic Development Board',
     tier: 'Diamond',
-    logo_url: '/images/logos/vercel.png',
+    logo_url: '/images/logos/edb_logo.png',
   },
   {
     id: 'd3',
@@ -72,9 +72,9 @@ export const MOCK_SPONSORS: Sponsor[] = [
   { id: 'p5', name: 'Anthropic', tier: 'Platinum', logo_url: '/images/logos/anthr_wht_transp.png' },
   {
     id: 'p6',
-    name: 'EDB',
+    name: 'Vercel',
     tier: 'Platinum',
-    logo_url: '/images/logos/edb_logo.png',
+    logo_url: '/images/logos/vercel.png',
   },
   { id: 'g1', name: 'Emtel', tier: 'Gold', logo_url: 'https://picsum.photos/seed/emtel/250/100' },
   { id: 'g2', name: 'MauBank', tier: 'Gold', logo_url: 'https://picsum.photos/seed/maubank/250/100' },
