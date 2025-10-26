@@ -24,7 +24,7 @@ export default function LogoMarquee() {
     <div className="marquee">
       <div className="marquee-content">
         {extendedLogos.map((logo, index) => (
-          <div key={`${logo.id}-${index}`} className="flex-shrink-0 w-auto h-28 relative">
+          <div key={`${logo.id}-${index}`} className="flex-shrink-0 w-auto h-20 relative">
             <Image
               src={logo.path}
               alt={`Sponsor Logo ${logo.id}`}
