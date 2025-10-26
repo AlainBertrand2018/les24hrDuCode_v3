@@ -4,6 +4,31 @@ import Footer from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import LogoMarquee from '@/components/logo-marquee';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
+const faqItems = [
+    {
+        question: "What is Les 24hr du Code?",
+        answer: "It is the ultimate 24-hour coding challenge and entrepreneur competition in Mauritius. It's a high-energy event where teams design, code, and deploy an MVP in just 24 hours."
+    },
+    {
+        question: "Who can participate?",
+        answer: "The event is open to developers, designers, AI specialists, students, and anyone passionate about technology and innovation. You can register as a team or as an individual to be matched with one."
+    },
+    {
+        question: "What should I bring?",
+        answer: "You'll need to bring your laptop, any necessary chargers, and your brilliant ideas. We'll provide the food, drinks, internet, and an inspiring environment to keep you going."
+    },
+    {
+        question: "Are there prizes?",
+        answer: "Yes! There will be prizes for the top teams, including cash prizes, tech gadgets, and unique opportunities with our sponsors. More details will be announced closer to the event date."
+    },
+]
 
 export default function HomePage() {
   
@@ -105,6 +130,28 @@ export default function HomePage() {
           </div>
         </section>
         
+        {/* FAQ Section */}
+        <section id="faq" className="h-screen flex flex-col justify-center bg-background">
+          <div className="container mx-auto max-w-3xl">
+            <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
+                <p className="text-muted-foreground mt-4">
+                    Find answers to common questions about Les 24hr du Code.
+                </p>
+            </div>
+            <Accordion type="single" collapsible className="w-full">
+                {faqItems.map((item, index) => (
+                    <AccordionItem key={index} value={`item-${index + 1}`}>
+                        <AccordionTrigger className="text-lg font-semibold">{item.question}</AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground">
+                            {item.answer}
+                        </AccordionContent>
+                    </AccordionItem>
+                ))}
+            </Accordion>
+          </div>
+        </section>
+
         {/* Info & Contact Section */}
         <section id="contact" className="h-screen flex flex-col justify-center items-center bg-primary/10">
            <div className="container mx-auto text-center">
