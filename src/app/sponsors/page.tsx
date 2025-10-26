@@ -99,8 +99,8 @@ export default function SponsorsPage() {
 
                 return (
                   <div key={tier}>
-                    <div className="flex items-center justify-center gap-4 mb-8">
-                       <h3 className="text-2xl font-bold tracking-tight text-center">{styles.label}</h3>
+                    <div className="flex items-center justify-start gap-4 mb-8">
+                       <h3 className="text-2xl font-bold tracking-tight text-left">{styles.label}</h3>
                     </div>
                     <div className={cn('grid gap-4 items-center justify-items-center', styles.gridClass)}>
                       {sponsors.map(sponsor => (
