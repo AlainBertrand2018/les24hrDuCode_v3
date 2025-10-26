@@ -12,7 +12,7 @@ const tierOrder: Sponsor['tier'][] = ['Diamond', 'Platinum', 'Gold', 'Silver', '
 
 const tierStyles: Record<Sponsor['tier'], { gridClass: string; imageSize: { width: number; height: number }; label: string; cardClass?: string }> = {
   'Diamond': {
-    gridClass: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+    gridClass: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4',
     imageSize: { width: 200, height: 80 },
     label: 'Diamond Partners',
   },
