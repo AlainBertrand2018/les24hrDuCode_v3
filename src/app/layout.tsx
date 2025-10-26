@@ -35,7 +35,7 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen pb-24">
           {children}
         </div>
-        <div className="fixed bottom-0 left-0 right-0 z-50 py-4 bg-background/60 backdrop-blur-sm border-t border-border/40">
+        <div className="fixed bottom-0 left-0 right-0 z-50 py-4">
             <LogoMarquee />
         </div>
         <Toaster />
