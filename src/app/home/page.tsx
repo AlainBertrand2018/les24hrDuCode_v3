@@ -3,9 +3,26 @@ import Header from '@/components/header-main';
 import Footer from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import LogoFader from '@/components/logo-fader';
+
+const logos = [
+  { src: '/images/Coat_of_arms_of_Mauritius_(Original_version).svg.png', alt: 'Coat of arms of Mauritius' },
+  { src: '/images/logos/edb_logo.png', alt: 'EDB Logo' },
+  { src: '/images/logos/Dell_Logo.png', alt: 'Dell Logo' },
+  { src: '/images/logos/le_labourdonnais_logo.png', alt: 'Le Labourdonnais Logo' },
+  { src: '/images/logos/Google_Gemini_logo.png', alt: 'Google Gemini Logo' },
+  { src: '/images/logos/microsoft_azure.png', alt: 'Microsoft Azure Logo' },
+  { src: '/images/logos/openai_wht_transp.png', alt: 'OpenAI Logo' },
+  { src: '/images/logos/mistral_wht_transp.png', alt: 'Mistral AI Logo' },
+  { src: '/images/logos/anthr_wht_transp.png', alt: 'Anthropic Logo' },
+  { src: '/images/logos/vercel_wht_bk.png', alt: 'Vercel Logo' },
+  { src: '/images/logos/emtel_logo.png', alt: 'Emtel Logo' },
+  { src: '/images/logos/mt_logo.png', alt: 'Mauritius Telecom Logo' },
+  { src: '/images/logos/maubank_logo.png', alt: 'MauBank Logo' },
+];
 
 export default function HomePage() {
+  const firstFiveLogos = logos.slice(0, 5);
+  
   return (
     <>
       <Header />
@@ -28,7 +45,22 @@ export default function HomePage() {
             <div id="sponsors" className="relative z-20 w-full py-8">
                 <div className="container mx-auto text-center">
                     <h2 className="text-xl font-semibold mb-8 text-primary-foreground/90">Our Partners &amp; Sponsors</h2>
-                    <LogoFader />
+                    <div className="w-full h-[120px] bg-black/20 flex items-center justify-center overflow-hidden">
+                       <div className="grid grid-cols-5 gap-x-8 w-full max-w-6xl items-center justify-items-center">
+                         {firstFiveLogos.map((logo, index) => (
+                           <div key={index} className="h-full flex items-center justify-center p-2">
+                             <div className="relative h-full w-full max-h-[80px]">
+                               <Image
+                                 src={logo.src}
+                                 alt={logo.alt}
+                                 fill
+                                 className="object-contain"
+                               />
+                             </div>
+                           </div>
+                         ))}
+                       </div>
+                    </div>
                 </div>
             </div>
         </section>
