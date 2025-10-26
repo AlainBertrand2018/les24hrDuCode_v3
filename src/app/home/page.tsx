@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/accordion"
 import LanguageModal from '@/components/language-modal';
 import VideoPlayer from '@/components/video-player';
+import RegistrationWaitlistModal from '@/components/registration-waitlist-modal';
+
 
 const faqItems = [
     {
@@ -40,15 +42,18 @@ const videoUrls = {
 export default function HomePage() {
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
   const [isVideoPlayerOpen, setIsVideoPlayerOpen] = useState(false);
+  const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [videoSrc, setVideoSrc] = useState('');
+  const [lang, setLang] = useState<'en' | 'fr'>('en');
 
   useEffect(() => {
     // Open the language modal on initial load
     setIsLanguageModalOpen(true);
   }, []);
 
-  const handleSelectLanguage = (lang: 'en' | 'fr') => {
-    setVideoSrc(videoUrls[lang]);
+  const handleSelectLanguage = (selectedLang: 'en' | 'fr') => {
+    setLang(selectedLang);
+    setVideoSrc(videoUrls[selectedLang]);
     setIsLanguageModalOpen(false);
     setIsVideoPlayerOpen(true);
   };
@@ -56,6 +61,7 @@ export default function HomePage() {
   const handleVideoClose = () => {
     setIsVideoPlayerOpen(false);
     setVideoSrc('');
+    setIsWaitlistModalOpen(true);
   };
   
   return (
@@ -194,6 +200,11 @@ export default function HomePage() {
         onClose={handleVideoClose}
         onEnded={handleVideoClose}
         videoSrc={videoSrc}
+      />
+       <RegistrationWaitlistModal
+        isOpen={isWaitlistModalOpen}
+        onClose={() => setIsWaitlistModalOpen(false)}
+        lang={lang}
       />
     </>
   );
