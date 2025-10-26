@@ -89,7 +89,7 @@ export default {
           from: {
             height: 'var(--radix-accordion-content-height)',
           },
-to: {
+          to: {
             height: '0',
           },
         },
@@ -101,12 +101,17 @@ to: {
           '0%': { opacity: '1' },
           '100%': { opacity: '0' },
         },
+        'scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'modal-in': 'modal-in 0.25s ease-out',
         'modal-out': 'modal-out 0.25s ease-in',
+        'scroll': 'scroll 60s linear infinite',
       },
     },
   },

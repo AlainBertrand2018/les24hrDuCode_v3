@@ -109,7 +109,7 @@ export default function MentorsPage() {
       <section className="relative h-screen w-full flex items-center justify-center text-center text-white">
          <div className="absolute inset-0 bg-black/60 z-10" />
          <Image
-            src="https://images.unsplash.com/photo-1573496773905-f5b17e76b254?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtZW50b3J8ZW58MHx8fHwxNzYxODU5ODgxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+            src="https://picsum.photos/seed/mentor-hero/1080/720"
             alt="Mentor guiding a team"
             fill
             className="object-cover"
