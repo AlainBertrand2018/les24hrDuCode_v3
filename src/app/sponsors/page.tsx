@@ -12,9 +12,9 @@ const tierOrder: Sponsor['tier'][] = ['Diamond', 'Platinum', 'Gold', 'Silver', '
 
 const tierStyles: Record<Sponsor['tier'], { gridClass: string; imageSize: { width: number; height: number }; label: string; cardClass?: string }> = {
   'Diamond': {
-    gridClass: 'grid-cols-1',
-    imageSize: { width: 250, height: 100 },
-    label: 'Title Partner',
+    gridClass: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+    imageSize: { width: 200, height: 80 },
+    label: 'Diamond Partners',
   },
   'Platinum': {
     gridClass: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
@@ -114,9 +114,6 @@ export default function SponsorsPage() {
                                 className="object-contain"
                               />
                            </div>
-                           {tier === 'Diamond' && (
-                               <p className="text-sm mt-2 text-primary font-semibold text-center">{sponsor.name}</p>
-                           )}
                         </div>
                       ))}
                     </div>

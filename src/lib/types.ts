@@ -11,7 +11,6 @@ export type Sponsor = {
   name: string;
   tier: 'Diamond' | 'Platinum' | 'Gold' | 'Silver' | 'Bronze';
   logo_url: string | null;
-  isTitlePartner?: boolean;
 };
 
 export type Registration = {
