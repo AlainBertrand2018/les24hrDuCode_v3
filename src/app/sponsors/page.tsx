@@ -1,76 +1,51 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { Globe } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { MOCK_SPONSORS } from '@/lib/mock-data';
 
-const mockSponsors = [
-  {
-    id: '1',
-    name: 'Innovate Corp',
-    tier: 'Gold',
-    logoUrl: 'https://picsum.photos/seed/innovate/250/100',
-    description: 'Innovate Corp is a leading technology firm specializing in AI-driven solutions. As a Gold sponsor, they are committed to fostering the next generation of tech talent and innovation.',
-    website: '#',
-  },
-  {
-    id: '2',
-    name: 'Tech Solutions Ltd.',
-    tier: 'Silver',
-    logoUrl: 'https://picsum.photos/seed/tech/200/80',
-    description: 'Tech Solutions Ltd. provides robust software and infrastructure for businesses worldwide. Their sponsorship supports our mission to empower developers and build a stronger tech community.',
-    website: '#',
-  },
-  {
-    id: '3',
-    name: 'Code Wizards',
-    tier: 'Bronze',
-    logoUrl: 'https://picsum.photos/seed/wizards/150/60',
-    description: 'Code Wizards is a dynamic startup focused on developer tools and productivity. They are excited to support emerging talent at Les 24hr du Code.',
-    website: '#',
-  },
-  {
-    id: '4',
-    name: 'Future Systems',
-    tier: 'Gold',
-    logoUrl: 'https://picsum.photos/seed/future/250/100',
-    description: 'Future Systems is at the forefront of cloud computing and sustainable technology. Their generous support as a Gold sponsor helps make this event possible.',
-    website: '#',
-  },
-  {
-    id: '5',
-    name: 'DevLink',
-    tier: 'Silver',
-    logoUrl: 'https://picsum.photos/seed/devlink/200/80',
-    description: 'DevLink connects developers with opportunities and resources. They are passionate about community-driven events and are proud to be a Silver sponsor.',
-    website: '#',
-  },
-  {
-    id: '6',
-    name: 'ByteForce',
-    tier: 'Bronze',
-    logoUrl: 'https://picsum.photos/seed/byteforce/150/60',
-    description: 'ByteForce offers cybersecurity solutions for the modern enterprise. They are dedicated to helping build a secure and resilient digital future.',
-    website: '#',
-  },
-];
+type Sponsor = (typeof MOCK_SPONSORS)[0];
 
-type Sponsor = (typeof mockSponsors)[0];
+const tierOrder: Sponsor['tier'][] = ['Gold', 'Silver', 'Bronze'];
+
+const tierStyles = {
+  'Gold': {
+    gridClass: 'grid-cols-1 md:grid-cols-2',
+    imageSize: { width: 250, height: 100 },
+    label: 'Gold Sponsors',
+  },
+  'Silver': {
+    gridClass: 'grid-cols-2 md:grid-cols-3',
+    imageSize: { width: 200, height: 80 },
+    label: 'Silver Sponsors',
+  },
+  'Bronze': {
+    gridClass: 'grid-cols-3 md:grid-cols-5',
+    imageSize: { width: 150, height: 60 },
+    label: 'Bronze Sponsors',
+  },
+};
+
 
 export default function SponsorsPage() {
-  const [selectedSponsor, setSelectedSponsor] = useState<Sponsor | null>(null);
+
+  const groupedSponsors = useMemo(() => {
+    const groups: Partial<Record<Sponsor['tier'], Sponsor[]>> = {};
+    for (const sponsor of MOCK_SPONSORS) {
+      if (!groups[sponsor.tier]) {
+        groups[sponsor.tier] = [];
+      }
+      groups[sponsor.tier]!.push(sponsor);
+    }
+    return groups;
+  }, []);
 
   const scrollToSponsors = () => {
     document.getElementById('sponsors-list')?.scrollIntoView({ behavior: 'smooth' });
   };
   
-  const handleCloseModal = () => {
-    setSelectedSponsor(null);
-  };
-
   return (
     <div className="flex flex-col text-foreground">
       {/* Hero Section */}
@@ -98,28 +73,41 @@ export default function SponsorsPage() {
       {/* Sponsors List Section */}
       <section id="sponsors-list" className="w-full py-20 md:py-32 bg-background">
         <div className="container px-4 md:px-6">
-            <div className="text-center space-y-4 mb-12">
+            <div className="text-center space-y-4 mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Event Sponsors</h2>
                 <p className="max-w-2xl mx-auto text-muted-foreground md:text-lg">
                     The organizations committed to fostering talent and innovation.
                 </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                {mockSponsors.map((sponsor) => (
-                    <Card 
-                        key={sponsor.id} 
-                        onClick={() => setSelectedSponsor(sponsor)}
-                        className="group flex flex-col items-center text-center p-6 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg"
-                    >
-                        <div className="h-24 flex items-center justify-center mb-6">
-                          <Image src={sponsor.logoUrl} alt={`${sponsor.name} Logo`} width={200} height={80} className="object-contain max-h-20" />
+            
+            <div className="max-w-5xl mx-auto space-y-12">
+              {tierOrder.map(tier => {
+                const sponsors = groupedSponsors[tier];
+                if (!sponsors || sponsors.length === 0) return null;
+
+                const styles = tierStyles[tier];
+
+                return (
+                  <div key={tier}>
+                    <h3 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-6">{styles.label}</h3>
+                    <div className={cn('grid gap-px border bg-border', styles.gridClass)}>
+                      {sponsors.map(sponsor => (
+                        <div key={sponsor.id} className="bg-card hover:bg-card/80 p-6 flex justify-center items-center aspect-video transition-colors">
+                           <div className="h-24 flex items-center justify-center">
+                              <Image 
+                                src={sponsor.logo_url}
+                                alt={`${sponsor.name} Logo`}
+                                width={styles.imageSize.width}
+                                height={styles.imageSize.height}
+                                className="object-contain"
+                              />
+                           </div>
                         </div>
-                        <CardContent className="flex-grow flex flex-col justify-center p-0">
-                            <h3 className="text-xl font-bold">{sponsor.name}</h3>
-                            <p className="text-primary">{sponsor.tier} Sponsor</p>
-                        </CardContent>
-                    </Card>
-                ))}
+                      ))}
+                    </div>
+                  </div>
+                )
+              })}
             </div>
         </div>
       </section>
@@ -134,36 +122,6 @@ export default function SponsorsPage() {
             <Button size="lg" className="mt-8">Contact Us</Button>
         </div>
       </section>
-
-      {/* Sponsor Profile Modal */}
-      <Dialog open={!!selectedSponsor} onOpenChange={(isOpen) => !isOpen && handleCloseModal()}>
-        <DialogContent className="sm:max-w-md md:max-w-lg lg:max-w-2xl bg-card">
-          {selectedSponsor && (
-            <>
-              <DialogHeader>
-                  <div className="flex flex-col items-center gap-6 text-center">
-                      <div className="h-28 flex items-center justify-center w-full">
-                          <Image src={selectedSponsor.logoUrl} alt={`${selectedSponsor.name} Logo`} width={250} height={100} className="object-contain max-h-24" />
-                      </div>
-                      <div className="space-y-1">
-                        <DialogTitle className="text-3xl font-bold">{selectedSponsor.name}</DialogTitle>
-                        <DialogDescription className="text-primary text-lg">{selectedSponsor.tier} Sponsor</DialogDescription>
-                         <div className="flex justify-center pt-2">
-                            {selectedSponsor.website && <a href={selectedSponsor.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-muted-foreground hover:text-primary"><Globe className="h-4 w-4"/> Visit Website</a>}
-                         </div>
-                      </div>
-                  </div>
-              </DialogHeader>
-              <div className="py-4 space-y-6">
-                <div>
-                  <h4 className="font-semibold mb-2 text-foreground">About {selectedSponsor.name}</h4>
-                  <p className="text-muted-foreground text-sm">{selectedSponsor.description}</p>
-                </div>
-              </div>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }
