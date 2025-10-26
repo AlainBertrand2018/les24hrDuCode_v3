@@ -1,5 +1,4 @@
 import Header from '@/components/header-main';
-import Footer from '@/components/footer';
 
 export default function SponsorsLayout({
   children,
@@ -12,7 +11,6 @@ export default function SponsorsLayout({
       <main className="flex-grow bg-background">
         {children}
       </main>
-      <Footer />
     </>
   )
 }

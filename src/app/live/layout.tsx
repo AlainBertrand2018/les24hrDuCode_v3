@@ -1,5 +1,4 @@
 import Header from '@/components/header-main';
-import Footer from '@/components/footer';
 
 export default function LiveLayout({
   children,
@@ -12,7 +11,6 @@ export default function LiveLayout({
       <main className="flex-grow bg-background">
         {children}
       </main>
-      <Footer />
     </>
   )
 }

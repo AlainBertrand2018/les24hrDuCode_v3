@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Header from '@/components/header-main';
-import Footer from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import {
@@ -189,7 +188,6 @@ export default function HomePage() {
           </div>
         </section>
       </main>
-      <Footer />
       <LanguageModal
         isOpen={isLanguageModalOpen}
         onClose={() => setIsLanguageModalOpen(false)}
