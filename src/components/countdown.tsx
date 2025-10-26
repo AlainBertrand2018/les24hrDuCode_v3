@@ -37,7 +37,7 @@ export default function Countdown() {
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
       {[ 'Days', 'Hours', 'Minutes', 'Seconds'].map((unit) => (
          <div key={unit} className="flex flex-col items-center justify-center p-2 rounded-lg w-24 sm:w-32 md:w-40">
-            <span className="font-sans font-bold leading-none text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem]" style={{ color: '#161537' }}>00</span>
+            <span className="text-white font-sans font-bold leading-none text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem]">00</span>
             <span className="text-muted-foreground text-xs uppercase tracking-wider">{unit}</span>
         </div>
       ))}
@@ -61,7 +61,7 @@ export default function Countdown() {
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
       {timeUnits.map(unit => (
         <div key={unit.label} className="flex flex-col items-center justify-center p-2 rounded-lg w-24 sm:w-32 md:w-40">
-          <span className="font-sans font-bold leading-none text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem]" style={{ color: '#161537' }}>
+          <span className="text-white font-sans font-bold leading-none text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem]">
             {formatTime(unit.value)}
           </span>
           <span className="text-muted-foreground text-xs uppercase tracking-wider">{unit.label}</span>
