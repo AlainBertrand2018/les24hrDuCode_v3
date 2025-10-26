@@ -101,21 +101,12 @@ export default {
           '0%': { opacity: '1' },
           '100%': { opacity: '0' },
         },
-        'scroll-right-to-left': {
-          '0%': {
-            transform: 'translateX(0%)',
-          },
-          '100%': {
-            transform: 'translateX(-260vw)',
-          },
-        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'modal-in': 'modal-in 0.25s ease-out',
         'modal-out': 'modal-out 0.25s ease-in',
-        'scroll-right-to-left': 'scroll-right-to-left 45s linear infinite',
       },
     },
   },

@@ -3,7 +3,7 @@ import Header from '@/components/header-main';
 import Footer from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import LogoMarquee from '@/components/logo-marquee';
+import LogoFader from '@/components/logo-fader';
 
 export default function HomePage() {
   return (
@@ -28,7 +28,7 @@ export default function HomePage() {
             <div id="sponsors" className="relative z-20 w-full py-8">
                 <div className="container mx-auto text-center">
                     <h2 className="text-xl font-semibold mb-8 text-primary-foreground/90">Our Partners &amp; Sponsors</h2>
-                    <LogoMarquee />
+                    <LogoFader />
                 </div>
             </div>
         </section>

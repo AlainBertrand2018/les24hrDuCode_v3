@@ -84,20 +84,3 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
-
-@layer utilities {
-  .marquee-track {
-    animation: scroll-right-to-left 45s linear infinite;
-    width: 520vw;
-  }
-
-  .logo-item {
-    min-width: 20vw;
-    width: 20vw;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .logo-item:hover {
-    transform: scale(1.05);
-  }
-}
