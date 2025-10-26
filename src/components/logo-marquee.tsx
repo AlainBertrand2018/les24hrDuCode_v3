@@ -16,6 +16,7 @@ const logos = [
     { id: 'p7', name: 'Replit', logo_url: '/images/logos/replit_marqueeLogo.png' },
     { id: 'p8', name: 'Windsurf AI', logo_url: '/images/logos/windsurf_marqueeLogo.png' },
     { id: 'p9', name: 'Cursor', logo_url: '/images/logos/cursor_marqueeLogo.png' },
+    { id: 'p10', name: 'Nvidia', logo_url: '/images/logos/nvidia_marqueeLogo.png' },
     { id: 'g1', name: 'Emtel', logo_url: '/images/logos/emtel_logo_wht.png' },
     { id: 'g2', name: 'Mauritius Telecom', logo_url: '/images/logos/mt_logo.png' },
     { id: 'g3', name: 'MauBank', logo_url: '/images/logos/maubank_logo.png' },
