@@ -30,6 +30,7 @@ export default function LogoMarquee() {
                     width={234}
                     height={91}
                     className="object-contain max-h-28"
+                    priority
                 />
             </div>
         ))}
