@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
        <head>
         <link rel="preload" href="/videos/Les24hrducode_expl_en_opt.mp4" as="video" type="video/mp4" />
         <link rel="preload" href="/videos/Les24hrducode_Expl_Fr_opt.mp4" as="video" type="video/mp4" />
