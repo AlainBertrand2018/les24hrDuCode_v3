@@ -22,13 +22,15 @@ export default function HomePage() {
                 data-ai-hint="hackathon event"
             />
             <div className="absolute inset-0 bg-black/40 z-10" />
-            <div className="relative z-20 flex flex-col h-full w-full container">
-              <div className="flex-grow flex flex-col justify-center items-center">
+            <div className="relative z-20 flex flex-col h-full w-full">
+              <div className="flex-grow flex flex-col justify-center items-center container">
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">Welcome to Les 24hr du Code</h1>
                 <p className="text-lg md:text-xl text-primary-foreground/90 mt-2">The ultimate coding challenge in Mauritius.</p>
               </div>
-              <div className="pb-16">
-                  <h2 className="text-xl font-semibold mb-8">Our Partners &amp; Sponsors</h2>
+              <div className="pb-16 w-full">
+                  <div className="container">
+                    <h2 className="text-xl font-semibold mb-8">Our Partners &amp; Sponsors</h2>
+                  </div>
                   <LogoMarquee />
               </div>
             </div>
