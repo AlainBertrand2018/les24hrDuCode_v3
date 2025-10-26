@@ -13,23 +13,23 @@ const tierOrder: Sponsor['tier'][] = ['Diamond', 'Platinum', 'Gold', 'Silver', '
 const tierStyles: Record<Sponsor['tier'], { gridClass: string; imageSize: { width: number; height: number }; label: string; cardClass?: string }> = {
   'Diamond': {
     gridClass: 'grid-cols-1',
-    imageSize: { width: 300, height: 120 },
+    imageSize: { width: 250, height: 100 },
     label: 'Title Partner',
     cardClass: 'bg-primary/10 border-primary'
   },
   'Platinum': {
     gridClass: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-    imageSize: { width: 250, height: 100 },
+    imageSize: { width: 200, height: 80 },
     label: 'Platinum Sponsors',
   },
   'Gold': {
     gridClass: 'grid-cols-2 md:grid-cols-3',
-    imageSize: { width: 200, height: 80 },
+    imageSize: { width: 180, height: 70 },
     label: 'Gold Sponsors',
   },
   'Silver': {
     gridClass: 'grid-cols-2 md:grid-cols-4',
-    imageSize: { width: 150, height: 60 },
+    imageSize: { width: 130, height: 50 },
     label: 'Silver Sponsors',
   },
    'Bronze': {
@@ -105,7 +105,7 @@ export default function SponsorsPage() {
                     </div>
                     <div className={cn('grid gap-4 items-center justify-items-center', styles.gridClass)}>
                       {sponsors.map(sponsor => (
-                        <div key={sponsor.id} className={cn("w-full bg-card p-6 flex flex-col justify-center items-center aspect-[2/1] transition-colors rounded-lg shadow-sm hover:shadow-primary/20", styles.cardClass)}>
+                        <div key={sponsor.id} className={cn("w-full bg-card p-6 flex flex-col justify-center items-center aspect-square transition-colors rounded-lg shadow-sm hover:shadow-primary/20", styles.cardClass)}>
                            <div className="h-full flex items-center justify-center">
                               <Image 
                                 src={sponsor.logo_url || ''}
