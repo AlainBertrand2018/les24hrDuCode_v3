@@ -5,25 +5,36 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { MOCK_SPONSORS } from '@/lib/mock-data';
+import type { Sponsor } from '@/lib/types';
+import { Star } from 'lucide-react';
 
-type Sponsor = (typeof MOCK_SPONSORS)[0];
+const tierOrder: Sponsor['tier'][] = ['Diamond', 'Platinum', 'Gold', 'Silver', 'Bronze'];
 
-const tierOrder: Sponsor['tier'][] = ['Gold', 'Silver', 'Bronze'];
-
-const tierStyles = {
-  'Gold': {
-    gridClass: 'grid-cols-1 md:grid-cols-2',
+const tierStyles: Record<Sponsor['tier'], { gridClass: string; imageSize: { width: number; height: number }; label: string; cardClass?: string }> = {
+  'Diamond': {
+    gridClass: 'grid-cols-1',
+    imageSize: { width: 300, height: 120 },
+    label: 'Title Partner',
+    cardClass: 'bg-primary/10 border-primary'
+  },
+  'Platinum': {
+    gridClass: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
     imageSize: { width: 250, height: 100 },
+    label: 'Platinum Sponsors',
+  },
+  'Gold': {
+    gridClass: 'grid-cols-2 md:grid-cols-3',
+    imageSize: { width: 200, height: 80 },
     label: 'Gold Sponsors',
   },
   'Silver': {
-    gridClass: 'grid-cols-2 md:grid-cols-3',
-    imageSize: { width: 200, height: 80 },
+    gridClass: 'grid-cols-2 md:grid-cols-4',
+    imageSize: { width: 150, height: 60 },
     label: 'Silver Sponsors',
   },
-  'Bronze': {
+   'Bronze': {
     gridClass: 'grid-cols-3 md:grid-cols-5',
-    imageSize: { width: 150, height: 60 },
+    imageSize: { width: 120, height: 50 },
     label: 'Bronze Sponsors',
   },
 };
@@ -80,7 +91,7 @@ export default function SponsorsPage() {
                 </p>
             </div>
             
-            <div className="max-w-5xl mx-auto space-y-12">
+            <div className="max-w-6xl mx-auto space-y-16">
               {tierOrder.map(tier => {
                 const sponsors = groupedSponsors[tier];
                 if (!sponsors || sponsors.length === 0) return null;
@@ -89,19 +100,24 @@ export default function SponsorsPage() {
 
                 return (
                   <div key={tier}>
-                    <h3 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-6">{styles.label}</h3>
-                    <div className={cn('grid gap-px border bg-border', styles.gridClass)}>
+                    <div className="flex items-center justify-center gap-4 mb-8">
+                       <h3 className="text-2xl font-bold tracking-tight text-center">{styles.label}</h3>
+                    </div>
+                    <div className={cn('grid gap-4 items-center justify-items-center', styles.gridClass)}>
                       {sponsors.map(sponsor => (
-                        <div key={sponsor.id} className="bg-card hover:bg-card/80 p-6 flex justify-center items-center aspect-video transition-colors">
-                           <div className="h-24 flex items-center justify-center">
+                        <div key={sponsor.id} className={cn("w-full bg-card p-6 flex flex-col justify-center items-center aspect-[2/1] transition-colors rounded-lg shadow-sm hover:shadow-primary/20", styles.cardClass)}>
+                           <div className="h-full flex items-center justify-center">
                               <Image 
-                                src={sponsor.logo_url}
+                                src={sponsor.logo_url || ''}
                                 alt={`${sponsor.name} Logo`}
                                 width={styles.imageSize.width}
                                 height={styles.imageSize.height}
                                 className="object-contain"
                               />
                            </div>
+                           {tier === 'Diamond' && (
+                               <p className="text-sm mt-2 text-primary font-semibold">{sponsor.name}</p>
+                           )}
                         </div>
                       ))}
                     </div>

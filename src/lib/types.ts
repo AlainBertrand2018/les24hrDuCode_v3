@@ -9,8 +9,9 @@ export type Schedule = {
 export type Sponsor = {
   id: string;
   name: string;
-  tier: 'Gold' | 'Silver' | 'Bronze';
+  tier: 'Diamond' | 'Platinum' | 'Gold' | 'Silver' | 'Bronze';
   logo_url: string | null;
+  isTitlePartner?: boolean;
 };
 
 export type Registration = {
