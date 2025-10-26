@@ -67,9 +67,9 @@ export const MOCK_SPONSORS: Sponsor[] = [
   },
   { id: 'p1', name: 'Google', tier: 'Platinum', logo_url: '/images/logos/goog_transp.png' },
   { id: 'p2', name: 'Microsoft', tier: 'Platinum', logo_url: '/images/logos/ms_transp.png' },
-  { id: 'p3', name: 'OpenAI', tier: 'Platinum', logo_url: '/images/logos/openai_wht_transp.png' },
-  { id: 'p4', name: 'Mistral', tier: 'Platinum', logo_url: '/images/logos/mistral_wht_transp.png' },
-  { id: 'p5', name: 'Anthropic', tier: 'Platinum', logo_url: '/images/logos/anthr_wht_transp.png' },
+  { id: 'p3', name: 'OpenAI', tier: 'Platinum', logo_url: '/images/logos/openai_transp.png' },
+  { id: 'p4', name: 'Mistral AI', tier: 'Platinum', logo_url: '/images/logos/mistral_transp.png' },
+  { id: 'p5', name: 'Anthropic', tier: 'Platinum', logo_url: '/images/logos/anthr_transp.png' },
   {
     id: 'p6',
     name: 'Vercel',
