@@ -20,3 +20,13 @@ export type Registration = {
   ticket_type: 'Standard' | 'VIP';
   created_at?: string;
 };
+
+export type Team = {
+  id: string;
+  name: string;
+  description: string;
+  members: {
+    name: string;
+    avatarUrl: string;
+  }[];
+};
