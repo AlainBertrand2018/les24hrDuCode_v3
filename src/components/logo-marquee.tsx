@@ -21,15 +21,15 @@ const logos = [
 export default function LogoMarquee() {
   return (
     <Marquee pauseOnHover speed={50}>
-        <div className="flex items-center gap-16">
+        <div className="flex items-center">
         {[...logos, ...logos].map((logo, index) => (
-            <div key={`${logo.id}-${index}`} className="mx-8 flex justify-center items-center h-20">
+            <div key={`${logo.id}-${index}`} className="mx-8 flex justify-center items-center h-24">
                 <Image
                     src={logo.logo_url}
                     alt={logo.name}
-                    width={140}
-                    height={50}
-                    className="object-contain max-h-12"
+                    width={180}
+                    height={70}
+                    className="object-contain max-h-20"
                 />
             </div>
         ))}
