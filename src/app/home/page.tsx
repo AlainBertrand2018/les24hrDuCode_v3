@@ -407,24 +407,19 @@ export default function HomePage() {
         {/* About Section */}
         <section id="about" className="py-20 md:py-32">
           <div className="container mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-6xl md:text-7xl font-bold">What is "Les 24hr du Code"?</h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-              <div className="flex justify-center">
-                  <Image
-                      src="/images/Base_Logo_dk.png"
-                      alt="Les 24hr du Code Logo"
-                      width={585}
-                      height={585}
-                      className="w-full h-auto max-w-[352px]"
-                  />
+            <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+              <div className="flex flex-col items-start text-left">
+                  <p className="text-muted-foreground font-light tracking-widest uppercase">What is</p>
+                  <h2 className="text-5xl md:text-6xl font-bold">Les 24hr du Code?</h2>
               </div>
-              <div className="text-left">
-                  <p className="text-muted-foreground mt-4 text-lg font-light">
-                    More than just a hackathon, Les 24hr du Code is a unique, 24-hour crucible for AI-driven innovation. We bring together 100 teams of two founders—including students, professionals, intrapreneurs, and entrepreneurs—all united by a business idea and an interest in AI. After an initial selection, 16 finalists spend 24 intensive hours using "vibe coding" to solve digital challenges and deliver a functional Minimum Viable Product (MVP). Challenge your limits in code, collaboration, and creativity.
+              <div className="text-left space-y-6">
+                  <p className="text-muted-foreground text-lg font-light">
+                    More than just a hackathon, Les 24hr du Code is a unique, 24-hour crucible for AI-driven innovation. We bring together 100 teams of two founders—including students, professionals, intrapreneurs, and entrepreneurs—all united by a business idea and an interest in AI. 
                   </p>
-                  <div className="mt-8 flex justify-center md:justify-start">
+                  <p className="text-muted-foreground text-lg font-light">
+                    After an initial selection, 16 finalists spend 24 intensive hours using "vibe coding" to solve digital challenges and deliver a functional Minimum Viable Product (MVP). Challenge your limits in code, collaboration, and creativity.
+                  </p>
+                  <div className="mt-8 flex justify-start">
                       <Button onClick={() => setIsLearnMoreModalOpen(true)}>Learn More</Button>
                   </div>
               </div>
@@ -434,14 +429,18 @@ export default function HomePage() {
         
         {/* Concept Video Section */}
         <section id="concept-video" className="py-20 md:py-32 bg-background">
-            <div className="container mx-auto text-center">
-                <div className="text-center mb-12">
-                  <h2 className="text-6xl md:text-7xl font-bold">Understanding The Organizer's Vision</h2>
-                  <p className="text-muted-foreground mt-4 font-light max-w-2xl mx-auto">Watch this short video to grasp the vision and the unique "vibe coding" philosophy behind Les 24hr du Code.</p>
+            <div className="container mx-auto text-left max-w-6xl">
+                 <div className="flex items-center gap-6 mb-12">
+                    <div className="flex flex-col">
+                        <p className="text-muted-foreground font-light tracking-widest uppercase">The Organizer's Vision</p>
+                        <h2 className="text-5xl md:text-6xl font-bold">Understanding The Vision</h2>
+                    </div>
+                    <div className="flex-grow border-t border-muted-foreground/50"></div>
                 </div>
-                <div className="mt-8">
-                    <Button variant="ghost" size="icon" className="h-32 w-32 rounded-full" onClick={openConceptVideo}>
-                        <Play className="h-20 w-20 text-primary-foreground fill-primary-foreground" />
+                <div className="mt-8 text-center">
+                    <p className="text-muted-foreground mt-4 font-light max-w-2xl mx-auto mb-12">Watch this short video to grasp the vision and the unique "vibe coding" philosophy behind Les 24hr du Code.</p>
+                    <Button variant="ghost" size="icon" className="h-40 w-40 rounded-full" onClick={openConceptVideo}>
+                        <Play className="h-28 w-28 text-primary-foreground fill-primary-foreground" />
                     </Button>
                 </div>
             </div>
@@ -449,10 +448,13 @@ export default function HomePage() {
         
         {/* Event Timeline Section */}
         <section id="schedule" className="py-20 md:py-32 bg-card">
-           <div className="container mx-auto text-center">
-                <div className="text-center mb-16">
-                  <h2 className="text-6xl md:text-7xl font-bold">Event Timeline</h2>
-                  <p className="text-muted-foreground mt-4 font-light">Key dates and events for the competition.</p>
+           <div className="container mx-auto text-left max-w-6xl">
+                <div className="flex items-center gap-6 mb-16">
+                    <div className="flex flex-col">
+                        <p className="text-muted-foreground font-light tracking-widest uppercase">The Event</p>
+                        <h2 className="text-5xl md:text-6xl font-bold">TIMELINE</h2>
+                    </div>
+                    <div className="flex-grow border-t border-muted-foreground/50"></div>
                 </div>
                 <div className="mt-12 grid md:grid-cols-3 gap-8 text-left">
                     {timelinePhases.map((phase) => (
@@ -472,47 +474,57 @@ export default function HomePage() {
                         </div>
                     ))}
                 </div>
-                <Button variant="link" className="mt-8">Full schedule &rarr;</Button>
+                <div className="text-left mt-8">
+                    <Button variant="link">Full schedule &rarr;</Button>
+                </div>
             </div>
         </section>
 
         {/* Register Your Team Section */}
         <section id="teams" className="py-20 md:py-32 bg-background">
-          <div className="container mx-auto text-center">
-            <div className="text-center mb-12">
-              <h2 className="text-6xl md:text-7xl font-bold">Register Your Team</h2>
-              <p className="text-muted-foreground mt-4 font-light">Ready to take on the challenge? Form your team and get ready to build something amazing.</p>
+          <div className="container mx-auto text-left max-w-6xl">
+            <div className="mb-12">
+              <p className="text-muted-foreground font-light tracking-widest uppercase">Ready for the challenge?</p>
+              <h2 className="text-5xl md:text-6xl font-bold">Register Your Team</h2>
             </div>
-            <Button size="lg" className="mt-6">Register Now</Button>
-            <Button variant="link" className="mt-2 block mx-auto">View teams &rarr;</Button>
+            <p className="text-muted-foreground mt-4 font-light max-w-xl">Ready to take on the challenge? Form your team and get ready to build something amazing.</p>
+            <div className="mt-8 flex items-center gap-4">
+                <Button size="lg">Register Now</Button>
+                <Button variant="link">View teams &rarr;</Button>
+            </div>
           </div>
         </section>
         
         {/* Speakers Section */}
         {isClient && (
         <section id="speakers" className="py-20 md:py-32 bg-card">
-           <div className="container mx-auto text-center">
-            <div className="text-center mb-16">
-              <h2 className="text-6xl md:text-7xl font-bold">Featured Speakers</h2>
-              <p className="text-muted-foreground mt-4 font-light">Learn from industry leaders and experts.</p>
+           <div className="container mx-auto text-left max-w-6xl">
+            <div className="flex items-center gap-6 mb-16">
+                <div className="flex flex-col">
+                    <p className="text-muted-foreground font-light tracking-widest uppercase">Learn From</p>
+                    <h2 className="text-5xl md:text-6xl font-bold">THE SPEAKERS</h2>
+                </div>
+                <div className="flex-grow border-t border-muted-foreground/50"></div>
             </div>
-            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
                {featuredSpeakers.map((speaker, index) => (
-                <div key={index} className="flex flex-col items-center space-y-3">
-                  <Avatar className="h-24 w-24">
+                <div key={index} className="flex flex-col items-center space-y-3 text-center">
+                  <Avatar className="h-32 w-32">
                     <AvatarImage src={`https://picsum.photos/seed/${speaker.name.replace(/\s+/g, '')}/200`} alt={speaker.name} />
                     <AvatarFallback>{speaker.name.charAt(0)}</AvatarFallback>
                   </Avatar>
                   <div className="text-center">
-                    <p className="font-bold">{speaker.name}</p>
+                    <p className="font-bold text-lg">{speaker.name}</p>
                     <p className="text-sm text-muted-foreground">{speaker.title}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <Button variant="link" asChild className="mt-8">
-                <Link href="/schedule#speakers">See all speakers &rarr;</Link>
-            </Button>
+            <div className="text-left mt-8">
+                <Button variant="link" asChild>
+                    <Link href="/schedule#speakers">See all speakers &rarr;</Link>
+                </Button>
+            </div>
           </div>
         </section>
         )}
@@ -520,12 +532,15 @@ export default function HomePage() {
         {/* Mentors Section */}
         {isClient && (
         <section id="mentors" className="py-20 md:py-32 bg-background">
-           <div className="container mx-auto text-center">
-            <div className="text-center mb-16">
-              <h2 className="text-6xl md:text-7xl font-bold">Our Mentors</h2>
-              <p className="text-muted-foreground mt-4 font-light">Get guidance from experienced professionals.</p>
+           <div className="container mx-auto text-left max-w-6xl">
+            <div className="flex items-center gap-6 mb-16">
+              <div className="flex flex-col">
+                  <p className="text-muted-foreground font-light tracking-widest uppercase">Meet</p>
+                  <h2 className="text-5xl md:text-6xl font-bold">THE MENTORS</h2>
+              </div>
+              <div className="flex-grow border-t border-muted-foreground/50"></div>
             </div>
-             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
                {featuredMentors.map((mentor) => (
                   <Card 
                       key={mentor.id} 
@@ -542,19 +557,24 @@ export default function HomePage() {
                   </Card>
               ))}
             </div>
-            <Button variant="link" asChild className="mt-4">
-              <Link href="/mentors#mentors-list">Meet the mentors &rarr;</Link>
-            </Button>
+            <div className="text-left mt-8">
+                <Button variant="link" asChild>
+                <Link href="/mentors#mentors-list">Meet all the mentors &rarr;</Link>
+                </Button>
+            </div>
           </div>
         </section>
         )}
         
         {/* Blog Section */}
         <section id="blog" className="py-20 md:py-32 bg-card">
-           <div className="container mx-auto text-center">
-            <div className="text-center mb-16">
-              <h2 className="text-6xl md:text-7xl font-bold">Latest Articles</h2>
-              <p className="text-muted-foreground mt-4 font-light">News and updates from the team.</p>
+           <div className="container mx-auto text-left max-w-6xl">
+            <div className="flex items-center gap-6 mb-16">
+                <div className="flex flex-col">
+                    <p className="text-muted-foreground font-light tracking-widest uppercase">The</p>
+                    <h2 className="text-5xl md:text-6xl font-bold">LATEST</h2>
+                </div>
+                <div className="flex-grow border-t border-muted-foreground/50"></div>
             </div>
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {mockArticles.map((article) => (
@@ -580,24 +600,26 @@ export default function HomePage() {
                 </Link>
               ))}
             </div>
-            <Button variant="link" className="mt-8">Read more on our blog &rarr;</Button>
+            <div className="text-left mt-8">
+                <Button variant="link">Read more on our blog &rarr;</Button>
+            </div>
           </div>
         </section>
         
         {/* FAQ Section */}
         <section id="faq" className="py-20 md:py-32 bg-background">
-          <div className="container mx-auto max-w-3xl">
-            <div className="text-center mb-12">
-                <h2 className="text-6xl md:text-7xl font-bold">Frequently Asked Questions</h2>
-                <p className="text-muted-foreground mt-4 font-light">
-                    Find answers to common questions about Les 24hr du Code.
-                </p>
+          <div className="container mx-auto max-w-6xl">
+            <div className="flex items-center gap-6 mb-12">
+                <div className="flex flex-col">
+                    <h2 className="text-5xl md:text-6xl font-bold">FAQs</h2>
+                </div>
+                <div className="flex-grow border-t border-muted-foreground/50"></div>
             </div>
             <Accordion type="single" collapsible className="w-full">
                 {faqItems.map((item, index) => (
                     <AccordionItem key={index} value={`item-${index + 1}`} className="bg-card/20 rounded-lg px-4 mb-2">
-                        <AccordionTrigger className="text-lg font-semibold">{item.question}</AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground font-light">
+                        <AccordionTrigger className="text-lg font-semibold text-left">{item.question}</AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground font-light text-left">
                             {item.answer}
                         </AccordionContent>
                     </AccordionItem>
@@ -608,15 +630,15 @@ export default function HomePage() {
 
         {/* Info & Contact Section */}
         <section id="contact" className="py-20 md:py-32 bg-card">
-           <div className="container mx-auto text-center">
-              <div className="text-center mb-12">
-                <h2 className="text-6xl md:text-7xl font-bold">Get In Touch</h2>
-                <p className="text-muted-foreground mt-4 font-light max-w-xl mx-auto">
+           <div className="container mx-auto text-left max-w-6xl">
+              <div className="mb-12">
+                <h2 className="text-5xl md:text-6xl font-bold">Get In Touch</h2>
+                <p className="text-muted-foreground mt-4 font-light max-w-xl">
                   Have questions or want to get involved? Drop us a line.
                 </p>
               </div>
             
-              <Card className="max-w-xl mx-auto mt-8 text-left bg-card/80">
+              <Card className="max-w-xl text-left bg-card/80">
                   <CardContent className="p-6">
                     {isContactFormSubmitted ? (
                         <div className="text-center py-10">
