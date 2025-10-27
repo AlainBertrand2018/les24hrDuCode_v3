@@ -14,7 +14,7 @@ export default function LearnMoreModal({ isOpen, onClose }: LearnMoreModalProps)
         <DialogHeader>
           <DialogTitle className="text-3xl font-bold mb-4">Les 24hr du Code</DialogTitle>
         </DialogHeader>
-        <div className="prose prose-invert max-w-none text-muted-foreground font-light">
+        <div className="prose prose-invert max-w-none text-muted-foreground font-light space-y-4">
           <p>
             Conceptualized by Alain BERTRAND from Business Studio AI, this Vibe Coding Challenge is provisionally scheduled for March 13–15, 2026, at the SVICC in Pailles, Mauritius.
           </p>
