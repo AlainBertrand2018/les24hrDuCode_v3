@@ -386,7 +386,7 @@ export default function HomePage() {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 flex flex-col justify-center items-center text-center relative text-primary-foreground">
+        <section className="h-screen flex flex-col justify-center items-center text-center relative text-primary-foreground">
             <Image
                 src="/images/home_bk.webp"
                 alt="Hackathon event background"
@@ -673,6 +673,7 @@ export default function HomePage() {
 
 
     
+
 
 
 
