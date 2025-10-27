@@ -404,7 +404,7 @@ export default function HomePage() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 md:py-24">
+        <section id="about" className="h-screen flex flex-col justify-center">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-16">
                 <h2 className="text-6xl md:text-7xl font-bold">What is Les 24hr du Code?</h2>
@@ -436,8 +436,8 @@ export default function HomePage() {
         
         {/* Concept Video Section */}
         <section id="concept-video" className="py-16 md:py-24 bg-background">
-            <div className="container mx-auto text-center px-4 md:px-6">
-                <div className="space-y-4 mb-12">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="space-y-4 mb-12 text-center">
                     <h2 className="text-6xl md:text-7xl font-bold">Understanding The Vision</h2>
                     <p className="text-muted-foreground mt-4 font-light max-w-2xl mx-auto">Watch this short video to grasp the vision and the unique "vibe coding" philosophy behind Les 24hr du Code.</p>
                 </div>
@@ -451,8 +451,8 @@ export default function HomePage() {
         
         {/* Event Timeline Section */}
         <section id="schedule" className="py-16 md:py-24 bg-card">
-           <div className="container mx-auto text-center px-4 md:px-6">
-                <div className="space-y-4 mb-16">
+           <div className="container mx-auto px-4 md:px-6">
+                <div className="space-y-4 mb-16 text-center">
                     <h2 className="text-6xl md:text-7xl font-bold">TIMELINE</h2>
                 </div>
                 <div className="mt-12 grid md:grid-cols-3 gap-8 text-left max-w-6xl mx-auto">
@@ -481,8 +481,8 @@ export default function HomePage() {
 
         {/* Register Your Team Section */}
         <section id="teams" className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto text-center px-4 md:px-6">
-            <div className="space-y-4 mb-12">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="space-y-4 mb-12 text-center">
               <h2 className="text-6xl md:text-7xl font-bold">Register Your Team</h2>
                <p className="text-muted-foreground mt-4 font-light max-w-xl mx-auto">Ready to take on the challenge? Form your team and get ready to build something amazing.</p>
             </div>
@@ -494,10 +494,10 @@ export default function HomePage() {
         </section>
         
         {/* Speakers Section */}
-        {isClient && (
+        {isClient && featuredSpeakers.length > 0 && (
         <section id="speakers" className="py-16 md:py-24 bg-card">
-           <div className="container mx-auto text-center px-4 md:px-6">
-            <div className="space-y-4 mb-16">
+           <div className="container mx-auto px-4 md:px-6">
+            <div className="space-y-4 mb-16 text-center">
                 <h2 className="text-6xl md:text-7xl font-bold">THE SPEAKERS</h2>
             </div>
             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
@@ -524,10 +524,10 @@ export default function HomePage() {
         )}
 
         {/* Mentors Section */}
-        {isClient && (
+        {isClient && featuredMentors.length > 0 && (
         <section id="mentors" className="py-16 md:py-24 bg-background">
-           <div className="container mx-auto text-center px-4 md:px-6">
-            <div className="space-y-4 mb-16">
+           <div className="container mx-auto px-4 md:px-6">
+            <div className="space-y-4 mb-16 text-center">
               <h2 className="text-6xl md:text-7xl font-bold">THE MENTORS</h2>
             </div>
              <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
@@ -558,8 +558,8 @@ export default function HomePage() {
         
         {/* Blog Section */}
         <section id="blog" className="py-16 md:py-24 bg-card">
-           <div className="container mx-auto text-center px-4 md:px-6">
-            <div className="space-y-4 mb-16">
+           <div className="container mx-auto px-4 md:px-6">
+            <div className="space-y-4 mb-16 text-center">
                 <h2 className="text-6xl md:text-7xl font-bold">THE LATEST</h2>
             </div>
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
@@ -641,7 +641,7 @@ export default function HomePage() {
                                     <FormItem><FormLabel>Your Email</FormLabel><FormControl><Input type="email" {...field} /></FormControl><FormMessage /></FormItem>
                                 )}/>
                                 <FormField control={contactForm.control} name="message" render={({ field }) => (
-                                    <FormItem><FormLabel>Your Message</FormLabel><FormControl><Textarea rows={4} {...field} /></FormControl><FormMessage /></FormItem>
+                                    <FormItem><FormLabel>Your Message</FormLabel><FormControl><Textarea rows={4} {...field} /></FormControl><FormMessage /></FormMessage>
                                 )}/>
                                 <Button type="submit" className="w-full" disabled={isContactFormSubmitting}>
                                     {isContactFormSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin"/>Sending...</> : 'Send Message'}
