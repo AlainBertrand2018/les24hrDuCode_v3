@@ -13,7 +13,7 @@ import {
 import LanguageModal from '@/components/language-modal';
 import VideoPlayer from '@/components/video-player';
 import RegistrationWaitlistModal from '@/components/registration-waitlist-modal';
-import { FilePenLine, Video, PartyPopper, CalendarDays, Rocket, Trophy, ArrowRight, Loader2, CheckCircle } from 'lucide-react';
+import { FilePenLine, Video, PartyPopper, CalendarDays, Rocket, Trophy, ArrowRight, Loader2, CheckCircle, PlayCircle } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -319,6 +319,7 @@ const mockArticles = [
 export default function HomePage() {
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
   const [isVideoPlayerOpen, setIsVideoPlayerOpen] = useState(false);
+  const [isConceptVideoOpen, setIsConceptVideoOpen] = useState(false);
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [videoSrc, setVideoSrc] = useState('');
   const [lang, setLang] = useState<'en' | 'fr'>('en');
@@ -370,12 +371,22 @@ export default function HomePage() {
     setIsWaitlistModalOpen(true);
   };
   
+  const openConceptVideo = () => {
+    setVideoSrc('/videos/A Nation Digital Future_en.mp4');
+    setIsConceptVideoOpen(true);
+  };
+
+  const closeConceptVideo = () => {
+    setIsConceptVideoOpen(false);
+    setVideoSrc('');
+  };
+  
   return (
     <>
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="h-screen flex flex-col justify-center items-center text-center relative text-primary-foreground">
+        <section className="py-20 md:py-32 flex flex-col justify-center items-center text-center relative text-primary-foreground">
             <Image
                 src="/images/home_bk.webp"
                 alt="Hackathon event background"
@@ -385,7 +396,7 @@ export default function HomePage() {
                 data-ai-hint="hackathon event"
             />
             <div className="absolute inset-0 bg-black/40 z-10" />
-            <div className="relative z-20 flex flex-col h-full w-full">
+            <div className="relative z-20 flex flex-col w-full">
               <div className="flex-grow flex flex-col justify-center items-center container">
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">Welcome to Les 24hr du Code</h1>
                 <p className="text-lg md:text-xl text-primary-foreground/90 mt-2 font-light">A Unique Vibe Coding Challenge Happening in March 2026 in Mauritius</p>
@@ -417,14 +428,27 @@ export default function HomePage() {
           </div>
         </section>
         
+        {/* Concept Video Section */}
+        <section id="concept-video" className="py-20 md:py-32 flex flex-col justify-center items-center bg-card text-center">
+            <div className="container mx-auto">
+                <h2 className="text-3xl font-bold">Understanding The Event's Concept</h2>
+                <p className="text-muted-foreground mt-4 font-light max-w-2xl mx-auto">Watch this short video to grasp the vision and the unique "vibe coding" philosophy behind Les 24hr du Code.</p>
+                <div className="mt-8">
+                    <Button variant="ghost" size="icon" className="h-24 w-24" onClick={openConceptVideo}>
+                        <PlayCircle className="h-20 w-20 text-primary" />
+                    </Button>
+                </div>
+            </div>
+        </section>
+        
         {/* Event Timeline Section */}
-        <section id="schedule" className="py-20 md:py-32 flex flex-col justify-center items-center bg-card">
+        <section id="schedule" className="py-20 md:py-32 flex flex-col justify-center items-center bg-background">
            <div className="container mx-auto text-center">
                 <h2 className="text-3xl font-bold">Event Timeline</h2>
                 <p className="text-muted-foreground mt-4 font-light">Key dates and events for the competition.</p>
                 <div className="mt-12 grid md:grid-cols-3 gap-8 text-left">
                     {timelinePhases.map((phase) => (
-                        <div key={phase.title} className="p-6 rounded-lg bg-background/50">
+                        <div key={phase.title} className="p-6 rounded-lg bg-card/50">
                             <div className="flex items-center gap-4 mb-4">
                                 {phase.icon}
                                 <h3 className="text-2xl font-bold text-primary">{phase.title}</h3>
@@ -445,7 +469,7 @@ export default function HomePage() {
         </section>
 
         {/* Register Your Team Section */}
-        <section id="teams" className="py-20 md:py-32 flex flex-col justify-center items-center bg-background">
+        <section id="teams" className="py-20 md:py-32 flex flex-col justify-center items-center bg-card">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Register Your Team</h2>
             <p className="text-muted-foreground mt-4 font-light">Ready to take on the challenge? Form your team and get ready to build something amazing.</p>
@@ -456,7 +480,7 @@ export default function HomePage() {
         
         {/* Speakers Section */}
         {isClient && (
-        <section id="speakers" className="py-20 md:py-32 flex flex-col justify-center items-center bg-card">
+        <section id="speakers" className="py-20 md:py-32 flex flex-col justify-center items-center bg-background">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Featured Speakers</h2>
              <p className="text-muted-foreground mt-4 font-light">Learn from industry leaders and experts.</p>
@@ -483,7 +507,7 @@ export default function HomePage() {
 
         {/* Mentors Section */}
         {isClient && (
-        <section id="mentors" className="py-20 md:py-32 flex flex-col justify-center items-center bg-background">
+        <section id="mentors" className="py-20 md:py-32 flex flex-col justify-center items-center bg-card">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Our Mentors</h2>
              <p className="text-muted-foreground mt-4 font-light">Get guidance from experienced professionals.</p>
@@ -512,7 +536,7 @@ export default function HomePage() {
         )}
         
         {/* Blog Section */}
-        <section id="blog" className="py-20 md:py-32 flex flex-col justify-center items-center bg-card">
+        <section id="blog" className="py-20 md:py-32 flex flex-col justify-center items-center bg-background">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Latest Articles</h2>
              <p className="text-muted-foreground mt-4 font-light">News and updates from the team.</p>
@@ -545,7 +569,7 @@ export default function HomePage() {
         </section>
         
         {/* FAQ Section */}
-        <section id="faq" className="py-20 md:py-32 flex flex-col justify-center bg-background">
+        <section id="faq" className="py-20 md:py-32 flex flex-col justify-center bg-card">
           <div className="container mx-auto max-w-3xl">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
@@ -620,6 +644,12 @@ export default function HomePage() {
         isOpen={isVideoPlayerOpen}
         onClose={handleVideoClose}
         onEnded={handleVideoClose}
+        videoSrc={videoSrc}
+      />
+      <VideoPlayer
+        isOpen={isConceptVideoOpen}
+        onClose={closeConceptVideo}
+        onEnded={closeConceptVideo}
         videoSrc={videoSrc}
       />
        <RegistrationWaitlistModal
