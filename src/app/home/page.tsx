@@ -107,18 +107,8 @@ export default function HomePage() {
           </div>
         </section>
         
-        {/* Register Your Team Section */}
-        <section id="teams" className="h-screen flex flex-col justify-center items-center bg-card">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold">Register Your Team</h2>
-            <p className="text-muted-foreground mt-4 font-light">Ready to take on the challenge? Form your team and get ready to build something amazing.</p>
-            <Button size="lg" className="mt-6">Register Now</Button>
-            <Button variant="link" className="mt-2 block mx-auto">View teams &rarr;</Button>
-          </div>
-        </section>
-
         {/* Timeline Section */}
-        <section id="schedule" className="h-screen flex flex-col justify-center items-center bg-background">
+        <section id="schedule" className="h-screen flex flex-col justify-center items-center bg-card">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Event Timeline</h2>
              <p className="text-muted-foreground mt-4 font-light">Key dates and events for the competition.</p>
@@ -126,6 +116,16 @@ export default function HomePage() {
               <p className="text-muted-foreground">[Timeline Graphic Here]</p>
             </div>
             <Button variant="link" className="mt-4">Full schedule &rarr;</Button>
+          </div>
+        </section>
+
+        {/* Register Your Team Section */}
+        <section id="teams" className="h-screen flex flex-col justify-center items-center bg-background">
+          <div className="container mx-auto text-center">
+            <h2 className="text-3xl font-bold">Register Your Team</h2>
+            <p className="text-muted-foreground mt-4 font-light">Ready to take on the challenge? Form your team and get ready to build something amazing.</p>
+            <Button size="lg" className="mt-6">Register Now</Button>
+            <Button variant="link" className="mt-2 block mx-auto">View teams &rarr;</Button>
           </div>
         </section>
         
