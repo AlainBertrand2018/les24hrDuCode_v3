@@ -80,6 +80,19 @@ const speakers = [
 
 type Speaker = typeof speakers[0];
 
+const mentors = [
+  { id: '1', name: 'Sarah Chen', title: 'Principal Engineer @ Google' },
+  { id: '2', name: 'David Lee', title: 'UX Lead @ Microsoft' },
+  { id: '3', name: 'Maria Rodriguez', title: 'AI Researcher @ OpenAI' },
+  { id: '4', name: 'Tom Brighton', title: 'Sr. Advocate @ AWS' },
+  { id: '5', name: 'Aisha Khan', title: 'Cybersecurity Expert' },
+  { id: '6', name: 'Kenji Tanaka', title: 'Product Manager @ Vercel' },
+  { id: '7', name: 'Fatima Al-Jamil', title: 'Data Scientist @ Netflix' },
+  { id: '8', name: 'Charles Xavier', title: 'Professor of Genetics' },
+];
+type Mentor = typeof mentors[0];
+
+
 export default function HomePage() {
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
   const [isVideoPlayerOpen, setIsVideoPlayerOpen] = useState(false);
@@ -87,6 +100,7 @@ export default function HomePage() {
   const [videoSrc, setVideoSrc] = useState('');
   const [lang, setLang] = useState<'en' | 'fr'>('en');
   const [featuredSpeakers, setFeaturedSpeakers] = useState<Speaker[]>([]);
+  const [featuredMentors, setFeaturedMentors] = useState<Mentor[]>([]);
 
 
   useEffect(() => {
@@ -94,8 +108,12 @@ export default function HomePage() {
     setIsLanguageModalOpen(true);
     
     // Select 4 random speakers
-    const shuffled = [...speakers].sort(() => 0.5 - Math.random());
-    setFeaturedSpeakers(shuffled.slice(0, 4));
+    const shuffledSpeakers = [...speakers].sort(() => 0.5 - Math.random());
+    setFeaturedSpeakers(shuffledSpeakers.slice(0, 4));
+    
+    // Select 4 random mentors
+    const shuffledMentors = [...mentors].sort(() => 0.5 - Math.random());
+    setFeaturedMentors(shuffledMentors.slice(0, 4));
   }, []);
 
   const handleSelectLanguage = (selectedLang: 'en' | 'fr') => {
@@ -222,10 +240,23 @@ export default function HomePage() {
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Our Mentors</h2>
              <p className="text-muted-foreground mt-4 font-light">Get guidance from experienced professionals.</p>
-            <div className="h-40 flex items-center justify-center bg-muted rounded-lg mt-6">
-              <p className="text-muted-foreground">[Mentor Cards Here]</p>
+             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+               {featuredMentors.map((mentor, index) => (
+                <div key={index} className="flex flex-col items-center space-y-3">
+                  <Avatar className="h-24 w-24">
+                    <AvatarImage src={`https://picsum.photos/seed/${mentor.name.replace(/\s+/g, '')}/200`} alt={mentor.name} />
+                    <AvatarFallback>{mentor.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                  <div className="text-center">
+                    <p className="font-bold">{mentor.name}</p>
+                    <p className="text-sm text-muted-foreground">{mentor.title}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <Button variant="link" className="mt-4">Meet the mentors &rarr;</Button>
+            <Button variant="link" asChild className="mt-4">
+              <Link href="/mentors#mentors-list">Meet the mentors &rarr;</Link>
+            </Button>
           </div>
         </section>
         
