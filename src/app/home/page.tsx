@@ -442,7 +442,7 @@ export default function HomePage() {
                     <p className="text-muted-foreground mt-4 font-light max-w-2xl mx-auto">Watch this short video to grasp the vision and the unique "vibe coding" philosophy behind Les 24hr du Code.</p>
                 </div>
                 <div className="mt-8 text-center">
-                    <Button variant="ghost" size="icon" className="h-40 w-40 rounded-full" onClick={openConceptVideo}>
+                    <Button variant="default" size="icon" className="h-40 w-40 rounded-full" onClick={openConceptVideo}>
                         <Play className="h-32 w-32 text-primary-foreground fill-primary-foreground" />
                     </Button>
                 </div>
