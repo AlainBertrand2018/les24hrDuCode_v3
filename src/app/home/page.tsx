@@ -95,7 +95,7 @@ export default function HomePage() {
                     alt="Les 24hr du Code Logo"
                     width={585}
                     height={585}
-                    className="w-full h-auto max-w-[320px]"
+                    className="w-full h-auto max-w-[352px]"
                 />
             </div>
             <div className="text-left">
