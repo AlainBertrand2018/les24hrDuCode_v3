@@ -15,7 +15,7 @@ export default function SchedulePage() {
   return (
     <div className="flex flex-col text-foreground">
       {/* 1. Hero Section */}
-      <section className="h-screen w-full flex flex-col items-center justify-center bg-primary/10 text-center">
+      <section className="py-20 md:py-40 w-full flex flex-col items-center justify-center bg-primary/10 text-center">
         <div className="container px-4 md:px-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">Event Programme</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
@@ -25,7 +25,7 @@ export default function SchedulePage() {
       </section>
 
       {/* 2. Day 1 Section */}
-      <section className="min-h-[33vh] w-full flex items-center justify-center py-12 bg-background">
+      <section className="w-full flex items-center justify-center py-12 md:py-20 bg-background">
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-2">
@@ -40,7 +40,7 @@ export default function SchedulePage() {
       </section>
 
       {/* 3. Day 2 Section */}
-      <section className="min-h-[33vh] w-full flex items-center justify-center py-12 bg-card">
+      <section className="w-full flex items-center justify-center py-12 md:py-20 bg-card">
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-2">
@@ -55,7 +55,7 @@ export default function SchedulePage() {
       </section>
 
       {/* 4. Day 3 Section */}
-      <section className="min-h-[33vh] w-full flex items-center justify-center py-12 bg-background">
+      <section className="w-full flex items-center justify-center py-12 md:py-20 bg-background">
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-2">
@@ -70,7 +70,7 @@ export default function SchedulePage() {
       </section>
 
       {/* 5. Speakers Section */}
-      <section id="speakers" className="h-screen w-full flex flex-col items-center justify-center bg-card text-center">
+      <section id="speakers" className="w-full flex flex-col items-center justify-center py-20 md:py-32 bg-card text-center">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">Featured Speakers</h2>
           <p className="max-w-3xl mx-auto text-muted-foreground md:text-lg mb-12">
@@ -94,7 +94,7 @@ export default function SchedulePage() {
       </section>
       
       {/* 6. CTA Section */}
-      <section className="h-screen w-full flex flex-col items-center justify-center bg-primary/10 text-center">
+      <section className="w-full flex flex-col items-center justify-center py-20 md:py-32 bg-primary/10 text-center">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Ready to Join?</h2>
           <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">

@@ -104,7 +104,7 @@ export default function ExpoPage() {
       </section>
       
       {/* Why Exhibit Section */}
-      <section className="h-screen flex flex-col justify-center bg-card">
+      <section className="py-20 md:py-32 flex flex-col justify-center bg-card">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Why Exhibit at Les 24hr du Code?</h2>
@@ -125,7 +125,7 @@ export default function ExpoPage() {
       </section>
 
       {/* Audience Section */}
-       <section className="h-screen flex flex-col justify-center bg-background">
+       <section className="py-20 md:py-32 flex flex-col justify-center bg-background">
         <div className="container px-4 md:px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">Who You'll Meet</h2>
             <p className="max-w-3xl mx-auto text-muted-foreground md:text-lg mb-12">
@@ -153,7 +153,7 @@ export default function ExpoPage() {
       </section>
 
       {/* Gallery / Social Proof Section */}
-      <section className="h-screen flex flex-col justify-center bg-card">
+      <section className="py-20 md:py-32 flex flex-col justify-center bg-card">
          <div className="container px-4 md:px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">Join Leading Companies</h2>
              <p className="max-w-3xl mx-auto text-muted-foreground md:text-lg mb-12">
@@ -176,7 +176,7 @@ export default function ExpoPage() {
       </section>
 
       {/* Venue Section */}
-      <section className="h-screen flex flex-col justify-center bg-background">
+      <section className="py-20 md:py-32 flex flex-col justify-center bg-background">
         <div className="container px-4 md:px-6">
             <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-4">
@@ -205,7 +205,7 @@ export default function ExpoPage() {
       </section>
 
       {/* Registration Form Section */}
-      <section id="register-interest" className="h-screen flex flex-col justify-center bg-primary/5">
+      <section id="register-interest" className="py-20 md:py-32 flex flex-col justify-center bg-primary/5">
         <div className="container px-4 md:px-6">
           <Card className="max-w-2xl mx-auto shadow-xl">
             <CardHeader className="text-center p-8">

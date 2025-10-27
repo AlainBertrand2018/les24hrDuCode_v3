@@ -394,7 +394,7 @@ export default function HomePage() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="h-screen flex flex-col justify-center items-center bg-background">
+        <section id="about" className="py-20 md:py-32 flex flex-col justify-center items-center bg-background">
           <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center max-w-5xl">
             <div className="flex justify-center">
                 <Image
@@ -418,7 +418,7 @@ export default function HomePage() {
         </section>
         
         {/* Event Timeline Section */}
-        <section id="schedule" className="h-screen flex flex-col justify-center items-center bg-card">
+        <section id="schedule" className="py-20 md:py-32 flex flex-col justify-center items-center bg-card">
            <div className="container mx-auto text-center">
                 <h2 className="text-3xl font-bold">Event Timeline</h2>
                 <p className="text-muted-foreground mt-4 font-light">Key dates and events for the competition.</p>
@@ -445,7 +445,7 @@ export default function HomePage() {
         </section>
 
         {/* Register Your Team Section */}
-        <section id="teams" className="h-screen flex flex-col justify-center items-center bg-background">
+        <section id="teams" className="py-20 md:py-32 flex flex-col justify-center items-center bg-background">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Register Your Team</h2>
             <p className="text-muted-foreground mt-4 font-light">Ready to take on the challenge? Form your team and get ready to build something amazing.</p>
@@ -456,7 +456,7 @@ export default function HomePage() {
         
         {/* Speakers Section */}
         {isClient && (
-        <section id="speakers" className="h-screen flex flex-col justify-center items-center bg-card">
+        <section id="speakers" className="py-20 md:py-32 flex flex-col justify-center items-center bg-card">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Featured Speakers</h2>
              <p className="text-muted-foreground mt-4 font-light">Learn from industry leaders and experts.</p>
@@ -483,7 +483,7 @@ export default function HomePage() {
 
         {/* Mentors Section */}
         {isClient && (
-        <section id="mentors" className="h-screen flex flex-col justify-center items-center bg-background">
+        <section id="mentors" className="py-20 md:py-32 flex flex-col justify-center items-center bg-background">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Our Mentors</h2>
              <p className="text-muted-foreground mt-4 font-light">Get guidance from experienced professionals.</p>
@@ -512,7 +512,7 @@ export default function HomePage() {
         )}
         
         {/* Blog Section */}
-        <section id="blog" className="h-screen flex flex-col justify-center items-center bg-card">
+        <section id="blog" className="py-20 md:py-32 flex flex-col justify-center items-center bg-card">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Latest Articles</h2>
              <p className="text-muted-foreground mt-4 font-light">News and updates from the team.</p>
@@ -545,7 +545,7 @@ export default function HomePage() {
         </section>
         
         {/* FAQ Section */}
-        <section id="faq" className="h-screen flex flex-col justify-center bg-background">
+        <section id="faq" className="py-20 md:py-32 flex flex-col justify-center bg-background">
           <div className="container mx-auto max-w-3xl">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
@@ -567,7 +567,7 @@ export default function HomePage() {
         </section>
 
         {/* Info & Contact Section */}
-        <section id="contact" className="h-screen flex flex-col justify-center items-center bg-primary/10">
+        <section id="contact" className="py-20 md:py-32 flex flex-col justify-center items-center bg-primary/10">
            <div className="container mx-auto text-center">
               <h2 className="text-3xl font-bold">Get In Touch</h2>
               <p className="text-muted-foreground mt-4 font-light max-w-xl mx-auto">
