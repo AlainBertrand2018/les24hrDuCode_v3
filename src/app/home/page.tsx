@@ -408,7 +408,7 @@ export default function HomePage() {
         <section id="about" className="py-20 md:py-32">
           <div className="container mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold">What is "Les 24hr du Code"?</h2>
+              <h2 className="text-6xl md:text-7xl font-bold">What is "Les 24hr du Code"?</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
               <div className="flex justify-center">
@@ -436,7 +436,7 @@ export default function HomePage() {
         <section id="concept-video" className="py-20 md:py-32">
             <div className="container mx-auto text-center">
                 <div className="text-center mb-12">
-                  <h2 className="text-4xl md:text-5xl font-bold">Understanding The Organizer's Vision</h2>
+                  <h2 className="text-6xl md:text-7xl font-bold">Understanding The Organizer's Vision</h2>
                   <p className="text-muted-foreground mt-4 font-light max-w-2xl mx-auto">Watch this short video to grasp the vision and the unique "vibe coding" philosophy behind Les 24hr du Code.</p>
                 </div>
                 <div className="mt-8">
@@ -451,7 +451,7 @@ export default function HomePage() {
         <section id="schedule" className="py-20 md:py-32">
            <div className="container mx-auto text-center">
                 <div className="text-center mb-16">
-                  <h2 className="text-4xl md:text-5xl font-bold">Event Timeline</h2>
+                  <h2 className="text-6xl md:text-7xl font-bold">Event Timeline</h2>
                   <p className="text-muted-foreground mt-4 font-light">Key dates and events for the competition.</p>
                 </div>
                 <div className="mt-12 grid md:grid-cols-3 gap-8 text-left">
@@ -480,7 +480,7 @@ export default function HomePage() {
         <section id="teams" className="py-20 md:py-32">
           <div className="container mx-auto text-center">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold">Register Your Team</h2>
+              <h2 className="text-6xl md:text-7xl font-bold">Register Your Team</h2>
               <p className="text-muted-foreground mt-4 font-light">Ready to take on the challenge? Form your team and get ready to build something amazing.</p>
             </div>
             <Button size="lg" className="mt-6">Register Now</Button>
@@ -493,7 +493,7 @@ export default function HomePage() {
         <section id="speakers" className="py-20 md:py-32">
            <div className="container mx-auto text-center">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold">Featured Speakers</h2>
+              <h2 className="text-6xl md:text-7xl font-bold">Featured Speakers</h2>
               <p className="text-muted-foreground mt-4 font-light">Learn from industry leaders and experts.</p>
             </div>
             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
@@ -522,7 +522,7 @@ export default function HomePage() {
         <section id="mentors" className="py-20 md:py-32">
            <div className="container mx-auto text-center">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold">Our Mentors</h2>
+              <h2 className="text-6xl md:text-7xl font-bold">Our Mentors</h2>
               <p className="text-muted-foreground mt-4 font-light">Get guidance from experienced professionals.</p>
             </div>
              <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
@@ -553,7 +553,7 @@ export default function HomePage() {
         <section id="blog" className="py-20 md:py-32">
            <div className="container mx-auto text-center">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold">Latest Articles</h2>
+              <h2 className="text-6xl md:text-7xl font-bold">Latest Articles</h2>
               <p className="text-muted-foreground mt-4 font-light">News and updates from the team.</p>
             </div>
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -588,7 +588,7 @@ export default function HomePage() {
         <section id="faq" className="py-20 md:py-32">
           <div className="container mx-auto max-w-3xl">
             <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold">Frequently Asked Questions</h2>
+                <h2 className="text-6xl md:text-7xl font-bold">Frequently Asked Questions</h2>
                 <p className="text-muted-foreground mt-4 font-light">
                     Find answers to common questions about Les 24hr du Code.
                 </p>
@@ -610,7 +610,7 @@ export default function HomePage() {
         <section id="contact" className="py-20 md:py-32">
            <div className="container mx-auto text-center">
               <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold">Get In Touch</h2>
+                <h2 className="text-6xl md:text-7xl font-bold">Get In Touch</h2>
                 <p className="text-muted-foreground mt-4 font-light max-w-xl mx-auto">
                   Have questions or want to get involved? Drop us a line.
                 </p>
