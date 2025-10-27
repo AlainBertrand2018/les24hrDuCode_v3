@@ -70,7 +70,7 @@ export default function SchedulePage() {
       </section>
 
       {/* 5. Speakers Section */}
-      <section className="h-screen w-full flex flex-col items-center justify-center bg-card text-center">
+      <section id="speakers" className="h-screen w-full flex flex-col items-center justify-center bg-card text-center">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">Featured Speakers</h2>
           <p className="max-w-3xl mx-auto text-muted-foreground md:text-lg mb-12">
@@ -80,7 +80,7 @@ export default function SchedulePage() {
             {speakers.map((speaker, index) => (
               <div key={index} className="flex flex-col items-center space-y-3">
                 <Avatar className="h-24 w-24">
-                  <AvatarImage src={`https://picsum.photos/seed/${index+1}/200`} alt={speaker.name} />
+                  <AvatarImage src={`https://picsum.photos/seed/${speaker.name.replace(/\s+/g, '')}/200`} alt={speaker.name} />
                   <AvatarFallback>{speaker.name.charAt(0)}</AvatarFallback>
                 </Avatar>
                 <div className="text-center">

@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import Header from '@/components/header-main';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
@@ -13,6 +14,7 @@ import LanguageModal from '@/components/language-modal';
 import VideoPlayer from '@/components/video-player';
 import RegistrationWaitlistModal from '@/components/registration-waitlist-modal';
 import { FilePenLine, Video, PartyPopper, CalendarDays, Rocket, Trophy } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 
 const faqItems = [
@@ -67,6 +69,16 @@ const timelinePhases = [
   },
 ]
 
+const speakers = [
+  { name: 'Speaker One', title: 'AI Specialist' },
+  { name: 'Speaker Two', title: 'Next.js Guru' },
+  { name: 'Speaker Three', title: 'Firebase Expert' },
+  { name: 'Speaker Four', title: 'UI/UX Designer' },
+  { name: 'Speaker Five', title: 'Cloud Architect' },
+  { name: 'Speaker Six', title: 'DevOps Leader' },
+];
+
+type Speaker = typeof speakers[0];
 
 export default function HomePage() {
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
@@ -74,10 +86,16 @@ export default function HomePage() {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [videoSrc, setVideoSrc] = useState('');
   const [lang, setLang] = useState<'en' | 'fr'>('en');
+  const [featuredSpeakers, setFeaturedSpeakers] = useState<Speaker[]>([]);
+
 
   useEffect(() => {
     // Open the language modal on initial load
     setIsLanguageModalOpen(true);
+    
+    // Select 4 random speakers
+    const shuffled = [...speakers].sort(() => 0.5 - Math.random());
+    setFeaturedSpeakers(shuffled.slice(0, 4));
   }, []);
 
   const handleSelectLanguage = (selectedLang: 'en' | 'fr') => {
@@ -179,10 +197,23 @@ export default function HomePage() {
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Featured Speakers</h2>
              <p className="text-muted-foreground mt-4 font-light">Learn from industry leaders and experts.</p>
-            <div className="h-40 flex items-center justify-center bg-muted rounded-lg mt-6">
-              <p className="text-muted-foreground">[Speaker Cards Here]</p>
+            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+               {featuredSpeakers.map((speaker, index) => (
+                <div key={index} className="flex flex-col items-center space-y-3">
+                  <Avatar className="h-24 w-24">
+                    <AvatarImage src={`https://picsum.photos/seed/${speaker.name.replace(/\s+/g, '')}/200`} alt={speaker.name} />
+                    <AvatarFallback>{speaker.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                  <div className="text-center">
+                    <p className="font-bold">{speaker.name}</p>
+                    <p className="text-sm text-muted-foreground">{speaker.title}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <Button variant="link" className="mt-4">See all speakers &rarr;</Button>
+            <Button variant="link" asChild className="mt-8">
+                <Link href="/schedule#speakers">See all speakers &rarr;</Link>
+            </Button>
           </div>
         </section>
 
