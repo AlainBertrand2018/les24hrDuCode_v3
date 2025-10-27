@@ -405,10 +405,8 @@ export default function HomePage() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 md:py-32 flex flex-col justify-center items-center relative">
-          <Image src="https://picsum.photos/seed/section-about/1920/1080" alt="Abstract background" fill className="object-cover" data-ai-hint="abstract background" />
-          <div className="absolute inset-0 bg-black/60 z-10" />
-          <div className="relative z-20 container mx-auto grid md:grid-cols-2 gap-12 items-center max-w-5xl">
+        <section id="about" className="py-20 md:py-32 bg-card">
+          <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center max-w-5xl">
             <div className="flex justify-center">
                 <Image
                     src="/images/Base_Logo_dk.png"
@@ -431,25 +429,21 @@ export default function HomePage() {
         </section>
         
         {/* Concept Video Section */}
-        <section id="concept-video" className="py-20 md:py-32 flex flex-col justify-center items-center text-center relative">
-            <Image src="https://picsum.photos/seed/section-concept/1920/1080" alt="Abstract background" fill className="object-cover" data-ai-hint="abstract background" />
-            <div className="absolute inset-0 bg-black/70 z-10" />
-            <div className="relative z-20 container mx-auto">
+        <section id="concept-video" className="py-20 md:py-32 bg-background">
+            <div className="container mx-auto text-center">
                 <h2 className="text-3xl font-bold">Understanding The Organizer's Vision</h2>
                 <p className="text-muted-foreground mt-4 font-light max-w-2xl mx-auto">Watch this short video to grasp the vision and the unique "vibe coding" philosophy behind Les 24hr du Code.</p>
                 <div className="mt-8">
                     <Button variant="ghost" size="icon" className="h-32 w-32 rounded-full" onClick={openConceptVideo}>
-                        <Play className="h-24 w-24 text-primary-foreground fill-primary-foreground" />
+                        <Play className="h-20 w-20 text-primary-foreground fill-primary-foreground" />
                     </Button>
                 </div>
             </div>
         </section>
         
         {/* Event Timeline Section */}
-        <section id="schedule" className="py-20 md:py-32 flex flex-col justify-center items-center relative">
-          <Image src="https://picsum.photos/seed/section-schedule/1920/1080" alt="Abstract background" fill className="object-cover" data-ai-hint="abstract background" />
-          <div className="absolute inset-0 bg-black/60 z-10" />
-           <div className="relative z-20 container mx-auto text-center">
+        <section id="schedule" className="py-20 md:py-32 bg-card">
+           <div className="container mx-auto text-center">
                 <h2 className="text-3xl font-bold">Event Timeline</h2>
                 <p className="text-muted-foreground mt-4 font-light">Key dates and events for the competition.</p>
                 <div className="mt-12 grid md:grid-cols-3 gap-8 text-left">
@@ -475,10 +469,8 @@ export default function HomePage() {
         </section>
 
         {/* Register Your Team Section */}
-        <section id="teams" className="py-20 md:py-32 flex flex-col justify-center items-center relative">
-          <Image src="https://picsum.photos/seed/section-teams/1920/1080" alt="Abstract background" fill className="object-cover" data-ai-hint="abstract background" />
-          <div className="absolute inset-0 bg-black/70 z-10" />
-          <div className="relative z-20 container mx-auto text-center">
+        <section id="teams" className="py-20 md:py-32 bg-background">
+          <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Register Your Team</h2>
             <p className="text-muted-foreground mt-4 font-light">Ready to take on the challenge? Form your team and get ready to build something amazing.</p>
             <Button size="lg" className="mt-6">Register Now</Button>
@@ -488,10 +480,8 @@ export default function HomePage() {
         
         {/* Speakers Section */}
         {isClient && (
-        <section id="speakers" className="py-20 md:py-32 flex flex-col justify-center items-center relative">
-           <Image src="https://picsum.photos/seed/section-speakers/1920/1080" alt="Abstract background" fill className="object-cover" data-ai-hint="abstract background" />
-            <div className="absolute inset-0 bg-black/60 z-10" />
-           <div className="relative z-20 container mx-auto text-center">
+        <section id="speakers" className="py-20 md:py-32 bg-card">
+           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Featured Speakers</h2>
              <p className="text-muted-foreground mt-4 font-light">Learn from industry leaders and experts.</p>
             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
@@ -517,10 +507,8 @@ export default function HomePage() {
 
         {/* Mentors Section */}
         {isClient && (
-        <section id="mentors" className="py-20 md:py-32 flex flex-col justify-center items-center relative">
-            <Image src="https://picsum.photos/seed/section-mentors/1920/1080" alt="Abstract background" fill className="object-cover" data-ai-hint="abstract background" />
-            <div className="absolute inset-0 bg-black/70 z-10" />
-           <div className="relative z-20 container mx-auto text-center">
+        <section id="mentors" className="py-20 md:py-32 bg-background">
+           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Our Mentors</h2>
              <p className="text-muted-foreground mt-4 font-light">Get guidance from experienced professionals.</p>
              <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
@@ -548,10 +536,8 @@ export default function HomePage() {
         )}
         
         {/* Blog Section */}
-        <section id="blog" className="py-20 md:py-32 flex flex-col justify-center items-center relative">
-           <Image src="https://picsum.photos/seed/section-blog/1920/1080" alt="Abstract background" fill className="object-cover" data-ai-hint="abstract background" />
-            <div className="absolute inset-0 bg-black/60 z-10" />
-           <div className="relative z-20 container mx-auto text-center">
+        <section id="blog" className="py-20 md:py-32 bg-card">
+           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Latest Articles</h2>
              <p className="text-muted-foreground mt-4 font-light">News and updates from the team.</p>
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -583,10 +569,8 @@ export default function HomePage() {
         </section>
         
         {/* FAQ Section */}
-        <section id="faq" className="py-20 md:py-32 flex flex-col justify-center relative">
-          <Image src="https://picsum.photos/seed/section-faq/1920/1080" alt="Abstract background" fill className="object-cover" data-ai-hint="abstract background" />
-          <div className="absolute inset-0 bg-black/70 z-10" />
-          <div className="relative z-20 container mx-auto max-w-3xl">
+        <section id="faq" className="py-20 md:py-32 bg-background">
+          <div className="container mx-auto max-w-3xl">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
                 <p className="text-muted-foreground mt-4 font-light">
@@ -607,10 +591,8 @@ export default function HomePage() {
         </section>
 
         {/* Info & Contact Section */}
-        <section id="contact" className="py-20 md:py-32 flex flex-col justify-center items-center relative">
-           <Image src="https://picsum.photos/seed/section-contact/1920/1080" alt="Abstract background" fill className="object-cover" data-ai-hint="abstract background" />
-           <div className="absolute inset-0 bg-black/60 z-10" />
-           <div className="relative z-20 container mx-auto text-center">
+        <section id="contact" className="py-20 md:py-32 bg-card">
+           <div className="container mx-auto text-center">
               <h2 className="text-3xl font-bold">Get In Touch</h2>
               <p className="text-muted-foreground mt-4 font-light max-w-xl mx-auto">
                 Have questions or want to get involved? Drop us a line.
