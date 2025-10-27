@@ -310,11 +310,13 @@ export default function HomePage() {
   const [lang, setLang] = useState<'en' | 'fr'>('en');
   const [featuredSpeakers, setFeaturedSpeakers] = useState<Speaker[]>([]);
   const [featuredMentors, setFeaturedMentors] = useState<Mentor[]>([]);
+  const [isClient, setIsClient] = useState(false);
 
 
   useEffect(() => {
     // Open the language modal on initial load
     setIsLanguageModalOpen(true);
+    setIsClient(true);
     
     // Select 4 random speakers
     const shuffledSpeakers = [...speakers].sort(() => 0.5 - Math.random());
@@ -420,6 +422,7 @@ export default function HomePage() {
         </section>
         
         {/* Speakers Section */}
+        {isClient && (
         <section id="speakers" className="h-screen flex flex-col justify-center items-center bg-card">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Featured Speakers</h2>
@@ -443,8 +446,10 @@ export default function HomePage() {
             </Button>
           </div>
         </section>
+        )}
 
         {/* Mentors Section */}
+        {isClient && (
         <section id="mentors" className="h-screen flex flex-col justify-center items-center bg-background">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Our Mentors</h2>
@@ -471,6 +476,7 @@ export default function HomePage() {
             </Button>
           </div>
         </section>
+        )}
         
         {/* Blog Section */}
         <section id="blog" className="h-screen flex flex-col justify-center items-center bg-card">
@@ -557,5 +563,3 @@ export default function HomePage() {
     </>
   );
 }
-
-    
