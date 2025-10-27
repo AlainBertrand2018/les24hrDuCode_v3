@@ -434,8 +434,8 @@ export default function HomePage() {
                 <h2 className="text-3xl font-bold">Understanding The Organizer's Vision</h2>
                 <p className="text-muted-foreground mt-4 font-light max-w-2xl mx-auto">Watch this short video to grasp the vision and the unique "vibe coding" philosophy behind Les 24hr du Code.</p>
                 <div className="mt-8">
-                    <Button variant="ghost" size="icon" className="h-64 w-64 rounded-full" onClick={openConceptVideo}>
-                        <PlayCircle className="h-[180px] w-[180px] text-primary" />
+                    <Button size="lg" onClick={openConceptVideo}>
+                        Play Video ▶️
                     </Button>
                 </div>
             </div>
@@ -673,5 +673,6 @@ export default function HomePage() {
 
 
     
+
 
 
