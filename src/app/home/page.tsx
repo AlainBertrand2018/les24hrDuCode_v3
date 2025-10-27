@@ -431,7 +431,7 @@ export default function HomePage() {
         {/* Concept Video Section */}
         <section id="concept-video" className="py-20 md:py-32 flex flex-col justify-center items-center bg-card text-center">
             <div className="container mx-auto">
-                <h2 className="text-3xl font-bold">Understanding The Event's Concept</h2>
+                <h2 className="text-3xl font-bold">Understanding The Organizer's Vision</h2>
                 <p className="text-muted-foreground mt-4 font-light max-w-2xl mx-auto">Watch this short video to grasp the vision and the unique "vibe coding" philosophy behind Les 24hr du Code.</p>
                 <div className="mt-8">
                     <Button variant="ghost" size="icon" className="h-64 w-64 rounded-full" onClick={openConceptVideo}>
@@ -673,4 +673,5 @@ export default function HomePage() {
 
 
     
+
 
