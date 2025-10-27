@@ -13,10 +13,23 @@ import {
 import LanguageModal from '@/components/language-modal';
 import VideoPlayer from '@/components/video-player';
 import RegistrationWaitlistModal from '@/components/registration-waitlist-modal';
-import { FilePenLine, Video, PartyPopper, CalendarDays, Rocket, Trophy, ArrowRight } from 'lucide-react';
+import { FilePenLine, Video, PartyPopper, CalendarDays, Rocket, Trophy, ArrowRight, Loader2, CheckCircle } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+
+
+const contactFormSchema = z.object({
+  name: z.string().min(2, { message: 'Name is required.' }),
+  email: z.string().email({ message: 'A valid email is required.' }),
+  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
+});
 
 
 const faqItems = [
@@ -311,7 +324,21 @@ export default function HomePage() {
   const [featuredSpeakers, setFeaturedSpeakers] = useState<Speaker[]>([]);
   const [featuredMentors, setFeaturedMentors] = useState<Mentor[]>([]);
   const [isClient, setIsClient] = useState(false);
+  const [isContactFormSubmitting, setContactFormSubmitting] = useState(false);
+  const [isContactFormSubmitted, setContactFormSubmitted] = useState(false);
 
+  const contactForm = useForm<z.infer<typeof contactFormSchema>>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: { name: '', email: '', message: '' },
+  });
+
+  async function onContactSubmit(values: z.infer<typeof contactFormSchema>) {
+    setContactFormSubmitting(true);
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Mock API call
+    console.log('Contact Form Submitted:', values);
+    setContactFormSubmitting(false);
+    setContactFormSubmitted(true);
+  }
 
   useEffect(() => {
     // Open the language modal on initial load
@@ -536,10 +563,44 @@ export default function HomePage() {
         {/* Info & Contact Section */}
         <section id="contact" className="h-screen flex flex-col justify-center items-center bg-primary/10">
            <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold">Info & Contact</h2>
-             <p className="text-muted-foreground mt-4 font-light">Have questions? Get in touch with us.</p>
-            <div className="mt-6">
-              <p>contact@24hrducode.com</p>
+              <h2 className="text-3xl font-bold">Get In Touch</h2>
+              <p className="text-muted-foreground mt-4 font-light max-w-xl mx-auto">
+                Have questions or want to get involved? Drop us a line.
+              </p>
+            
+              <Card className="max-w-xl mx-auto mt-8 text-left bg-card">
+                  <CardContent className="p-6">
+                    {isContactFormSubmitted ? (
+                        <div className="text-center py-10">
+                            <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+                            <h3 className="text-2xl font-semibold mb-2">Message Sent!</h3>
+                            <p className="text-muted-foreground">
+                                Thank you for reaching out. We'll get back to you as soon as possible.
+                            </p>
+                        </div>
+                    ) : (
+                        <Form {...contactForm}>
+                            <form onSubmit={contactForm.handleSubmit(onContactSubmit)} className="space-y-4">
+                                <FormField control={contactForm.control} name="name" render={({ field }) => (
+                                    <FormItem><FormLabel>Your Name</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
+                                )}/>
+                                <FormField control={contactForm.control} name="email" render={({ field }) => (
+                                    <FormItem><FormLabel>Your Email</FormLabel><FormControl><Input type="email" {...field} /></FormControl><FormMessage /></FormItem>
+                                )}/>
+                                <FormField control={contactForm.control} name="message" render={({ field }) => (
+                                    <FormItem><FormLabel>Your Message</FormLabel><FormControl><Textarea rows={4} {...field} /></FormControl><FormMessage /></FormItem>
+                                )}/>
+                                <Button type="submit" className="w-full" disabled={isContactFormSubmitting}>
+                                    {isContactFormSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin"/>Sending...</> : 'Send Message'}
+                                </Button>
+                            </form>
+                        </Form>
+                    )}
+                  </CardContent>
+              </Card>
+
+            <div className="mt-8">
+              <p className="text-muted-foreground font-light">Or email us directly at <a href="mailto:contact@24hrducode.com" className="text-primary underline">contact@24hrducode.com</a></p>
             </div>
           </div>
         </section>
@@ -563,3 +624,5 @@ export default function HomePage() {
     </>
   );
 }
+
+    
