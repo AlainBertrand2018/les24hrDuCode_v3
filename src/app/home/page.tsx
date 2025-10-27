@@ -12,6 +12,7 @@ import {
 import LanguageModal from '@/components/language-modal';
 import VideoPlayer from '@/components/video-player';
 import RegistrationWaitlistModal from '@/components/registration-waitlist-modal';
+import { FilePenLine, Video, PartyPopper, CalendarDays, Rocket, Trophy } from 'lucide-react';
 
 
 const faqItems = [
@@ -37,6 +38,35 @@ const videoUrls = {
     en: '/videos/Les24hrducode_expl_en_opt.mp4',
     fr: '/videos/Les24hrducode_Expl_Fr_opt.mp4',
 };
+
+const timelinePhases = [
+  {
+    title: "Registration",
+    icon: <CalendarDays className="h-8 w-8 text-primary" />,
+    items: [
+      { date: "01 Nov 2025", description: "Registration Opens" },
+      { date: "20 Feb 2026", description: "Registration Closes" },
+    ],
+  },
+  {
+    title: "Selection",
+    icon: <FilePenLine className="h-8 w-8 text-primary" />,
+    items: [
+      { date: "21 Jan 2026", description: "Phase 1 (on Plan)" },
+      { date: "20 Feb 2026", description: "Phase 2 (via Video Pitch)" },
+    ],
+  },
+  {
+    title: "The Event",
+    icon: <PartyPopper className="h-8 w-8 text-primary" />,
+    items: [
+      { date: "13 Mar 2026", description: "Official Opening, Networking, Keynote speeches" },
+      { date: "14 Mar 2026", description: "Public Opening, Competition launch, Workshops" },
+      { date: "15 Mar 2026", description: "Competition closes, Demos, Awards, Closing Concert" },
+    ],
+  },
+]
+
 
 export default function HomePage() {
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
@@ -110,13 +140,28 @@ export default function HomePage() {
         {/* Timeline Section */}
         <section id="schedule" className="h-screen flex flex-col justify-center items-center bg-card">
            <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold">Event Timeline</h2>
-             <p className="text-muted-foreground mt-4 font-light">Key dates and events for the competition.</p>
-            <div className="h-40 flex items-center justify-center bg-muted rounded-lg mt-6">
-              <p className="text-muted-foreground">[Timeline Graphic Here]</p>
+                <h2 className="text-3xl font-bold">Event Timeline</h2>
+                <p className="text-muted-foreground mt-4 font-light">Key dates and events for the competition.</p>
+                <div className="mt-12 grid md:grid-cols-3 gap-8 text-left">
+                    {timelinePhases.map((phase) => (
+                        <div key={phase.title} className="p-6 rounded-lg bg-background/50">
+                            <div className="flex items-center gap-4 mb-4">
+                                {phase.icon}
+                                <h3 className="text-2xl font-bold text-primary">{phase.title}</h3>
+                            </div>
+                            <ul className="space-y-3">
+                                {phase.items.map(item => (
+                                    <li key={item.date}>
+                                        <p className="font-semibold">{item.date}</p>
+                                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+                <Button variant="link" className="mt-8">Full schedule &rarr;</Button>
             </div>
-            <Button variant="link" className="mt-4">Full schedule &rarr;</Button>
-          </div>
         </section>
 
         {/* Register Your Team Section */}
