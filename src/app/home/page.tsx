@@ -13,7 +13,7 @@ import {
 import LanguageModal from '@/components/language-modal';
 import VideoPlayer from '@/components/video-player';
 import RegistrationWaitlistModal from '@/components/registration-waitlist-modal';
-import { FilePenLine, Video, PartyPopper, CalendarDays, Rocket, Trophy, ArrowRight, Loader2, CheckCircle, PlayCircle } from 'lucide-react';
+import { FilePenLine, Video, PartyPopper, CalendarDays, Rocket, Trophy, ArrowRight, Loader2, CheckCircle, Play } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -434,8 +434,8 @@ export default function HomePage() {
                 <h2 className="text-3xl font-bold">Understanding The Organizer's Vision</h2>
                 <p className="text-muted-foreground mt-4 font-light max-w-2xl mx-auto">Watch this short video to grasp the vision and the unique "vibe coding" philosophy behind Les 24hr du Code.</p>
                 <div className="mt-8">
-                    <Button size="icon" className="h-32 w-32 rounded-full text-5xl" onClick={openConceptVideo}>
-                        ▶️
+                    <Button variant="ghost" size="icon" className="h-32 w-32 rounded-full" onClick={openConceptVideo}>
+                        <Play className="h-16 w-16 text-primary-foreground fill-primary-foreground" />
                     </Button>
                 </div>
             </div>
@@ -673,6 +673,7 @@ export default function HomePage() {
 
 
     
+
 
 
 
