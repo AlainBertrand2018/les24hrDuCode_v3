@@ -101,8 +101,7 @@ export default function HomePage() {
             <div className="text-left">
                 <h2 className="text-3xl font-bold">What is "Les 24hr du Code"?</h2>
                 <p className="text-muted-foreground mt-4 text-lg">
-                  More than just a hackathon, it's a celebration of code, creativity, and the Mauritian spirit. 
-                  It's a place where innovation thrives and the tech community comes together.
+                  More than just a hackathon, Les 24hr du Code is a unique, 24-hour crucible for AI-driven innovation. We bring together 100 teams of two founders—including students, professionals, intrapreneurs, and entrepreneurs—all united by a business idea and an interest in AI. After an initial selection, 16 finalists spend 24 intensive hours using "vibe coding" to solve digital challenges and deliver a functional Minimum Viable Product (MVP). Challenge your limits in code, collaboration, and creativity.
                 </p>
             </div>
           </div>
