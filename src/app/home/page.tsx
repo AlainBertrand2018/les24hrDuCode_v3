@@ -433,7 +433,7 @@ export default function HomePage() {
         </section>
         
         {/* Concept Video Section */}
-        <section id="concept-video" className="py-20 md:py-32">
+        <section id="concept-video" className="py-20 md:py-32 bg-background">
             <div className="container mx-auto text-center">
                 <div className="text-center mb-12">
                   <h2 className="text-6xl md:text-7xl font-bold">Understanding The Organizer's Vision</h2>
@@ -448,7 +448,7 @@ export default function HomePage() {
         </section>
         
         {/* Event Timeline Section */}
-        <section id="schedule" className="py-20 md:py-32">
+        <section id="schedule" className="py-20 md:py-32 bg-card">
            <div className="container mx-auto text-center">
                 <div className="text-center mb-16">
                   <h2 className="text-6xl md:text-7xl font-bold">Event Timeline</h2>
@@ -477,7 +477,7 @@ export default function HomePage() {
         </section>
 
         {/* Register Your Team Section */}
-        <section id="teams" className="py-20 md:py-32">
+        <section id="teams" className="py-20 md:py-32 bg-background">
           <div className="container mx-auto text-center">
             <div className="text-center mb-12">
               <h2 className="text-6xl md:text-7xl font-bold">Register Your Team</h2>
@@ -490,7 +490,7 @@ export default function HomePage() {
         
         {/* Speakers Section */}
         {isClient && (
-        <section id="speakers" className="py-20 md:py-32">
+        <section id="speakers" className="py-20 md:py-32 bg-card">
            <div className="container mx-auto text-center">
             <div className="text-center mb-16">
               <h2 className="text-6xl md:text-7xl font-bold">Featured Speakers</h2>
@@ -519,7 +519,7 @@ export default function HomePage() {
 
         {/* Mentors Section */}
         {isClient && (
-        <section id="mentors" className="py-20 md:py-32">
+        <section id="mentors" className="py-20 md:py-32 bg-background">
            <div className="container mx-auto text-center">
             <div className="text-center mb-16">
               <h2 className="text-6xl md:text-7xl font-bold">Our Mentors</h2>
@@ -550,7 +550,7 @@ export default function HomePage() {
         )}
         
         {/* Blog Section */}
-        <section id="blog" className="py-20 md:py-32">
+        <section id="blog" className="py-20 md:py-32 bg-card">
            <div className="container mx-auto text-center">
             <div className="text-center mb-16">
               <h2 className="text-6xl md:text-7xl font-bold">Latest Articles</h2>
@@ -585,7 +585,7 @@ export default function HomePage() {
         </section>
         
         {/* FAQ Section */}
-        <section id="faq" className="py-20 md:py-32">
+        <section id="faq" className="py-20 md:py-32 bg-background">
           <div className="container mx-auto max-w-3xl">
             <div className="text-center mb-12">
                 <h2 className="text-6xl md:text-7xl font-bold">Frequently Asked Questions</h2>
@@ -607,7 +607,7 @@ export default function HomePage() {
         </section>
 
         {/* Info & Contact Section */}
-        <section id="contact" className="py-20 md:py-32">
+        <section id="contact" className="py-20 md:py-32 bg-card">
            <div className="container mx-auto text-center">
               <div className="text-center mb-12">
                 <h2 className="text-6xl md:text-7xl font-bold">Get In Touch</h2>

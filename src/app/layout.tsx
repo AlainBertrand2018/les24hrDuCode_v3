@@ -1,14 +1,13 @@
 import type {Metadata} from 'next';
-import { Poppins } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { Toaster } from "@/components/ui/toaster"
 import LogoMarquee from '@/components/logo-marquee';
 import Footer from '@/components/footer';
 import './globals.css';
 
-const poppins = Poppins({ 
+const inter = Inter({ 
   subsets: ['latin'], 
   variable: '--font-sans',
-  weight: ['300', '400', '500', '600', '700'] 
 });
 
 export const metadata: Metadata = {
@@ -33,7 +32,7 @@ export default function RootLayout({
         <link rel="preload" href="/videos/Les24hrducode_Expl_Fr_opt.mp4" as="video" type="video/mp4" />
         <link rel="preload" href="/videos/A Nation Digital Future_en.mp4" as="video" type="video/mp4" />
       </head>
-      <body className={`${poppins.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         <div className="flex flex-col min-h-screen pb-56">
           {children}
         </div>
