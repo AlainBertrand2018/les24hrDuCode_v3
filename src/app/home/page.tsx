@@ -641,7 +641,7 @@ export default function HomePage() {
                                     <FormItem><FormLabel>Your Email</FormLabel><FormControl><Input type="email" {...field} /></FormControl><FormMessage /></FormItem>
                                 )}/>
                                 <FormField control={contactForm.control} name="message" render={({ field }) => (
-                                    <FormItem><FormLabel>Your Message</FormLabel><FormControl><Textarea rows={4} {...field} /></FormControl><FormMessage /></FormMessage>
+                                    <FormItem><FormLabel>Your Message</FormLabel><FormControl><Textarea rows={4} {...field} /></FormControl><FormMessage /></FormItem>
                                 )}/>
                                 <Button type="submit" className="w-full" disabled={isContactFormSubmitting}>
                                     {isContactFormSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin"/>Sending...</> : 'Send Message'}
