@@ -13,9 +13,10 @@ import {
 import LanguageModal from '@/components/language-modal';
 import VideoPlayer from '@/components/video-player';
 import RegistrationWaitlistModal from '@/components/registration-waitlist-modal';
-import { FilePenLine, Video, PartyPopper, CalendarDays, Rocket, Trophy } from 'lucide-react';
+import { FilePenLine, Video, PartyPopper, CalendarDays, Rocket, Trophy, ArrowRight } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 
 const faqItems = [
@@ -265,6 +266,41 @@ const mentors = [
 ];
 type Mentor = typeof mentors[0];
 
+const mockArticles = [
+  {
+    id: '1',
+    title: 'The Future of AI in Development',
+    excerpt: 'Explore how AI is reshaping the software development landscape.',
+    category: 'AI & ML',
+    imageUrl: 'https://picsum.photos/seed/article1/600/400',
+    imageHint: 'abstract AI'
+  },
+  {
+    id: '2',
+    title: 'Mastering Vibe Coding',
+    excerpt: 'Discover the secrets to staying in the zone and shipping features faster.',
+    category: 'Productivity',
+    imageUrl: 'https://picsum.photos/seed/article2/600/400',
+    imageHint: 'developer coding'
+  },
+  {
+    id: '3',
+    title: 'Why Mauritius is the Next Tech Hub',
+    excerpt: 'A look into the burgeoning tech scene of the paradise island.',
+    category: 'Community',
+    imageUrl: 'https://picsum.photos/seed/article3/600/400',
+    imageHint: 'Mauritius landscape'
+  },
+  {
+    id: '4',
+    title: 'From MVP to Market Leader',
+    excerpt: 'Lessons learned from past winners of Les 24hr du Code.',
+    category: 'Entrepreneurship',
+    imageUrl: 'https://picsum.photos/seed/article4/600/400',
+    imageHint: 'startup success'
+  },
+];
+
 
 export default function HomePage() {
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
@@ -346,7 +382,7 @@ export default function HomePage() {
           </div>
         </section>
         
-        {/* Timeline Section */}
+        {/* Event Timeline Section */}
         <section id="schedule" className="h-screen flex flex-col justify-center items-center bg-card">
            <div className="container mx-auto text-center">
                 <h2 className="text-3xl font-bold">Event Timeline</h2>
@@ -441,10 +477,31 @@ export default function HomePage() {
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Latest Articles</h2>
              <p className="text-muted-foreground mt-4 font-light">News and updates from the team.</p>
-            <div className="h-40 flex items-center justify-center bg-muted rounded-lg mt-6">
-              <p className="text-muted-foreground">[Article Previews Here]</p>
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {mockArticles.map((article) => (
+                <Link key={article.id} href={`/blog/${article.id}`} className="group block">
+                  <Card className="overflow-hidden h-full flex flex-col transform transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
+                    <div className="relative w-full aspect-[4/3]">
+                      <Image
+                        src={article.imageUrl}
+                        alt={article.title}
+                        fill
+                        className="object-cover"
+                        data-ai-hint={article.imageHint}
+                      />
+                    </div>
+                    <CardHeader>
+                      <Badge variant="secondary" className="w-fit mb-2">{article.category}</Badge>
+                      <CardTitle className="text-lg text-left">{article.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <p className="text-muted-foreground text-sm text-left">{article.excerpt}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
             </div>
-            <Button variant="link" className="mt-4">Read more on our blog &rarr;</Button>
+            <Button variant="link" className="mt-8">Read more on our blog &rarr;</Button>
           </div>
         </section>
         
@@ -500,3 +557,5 @@ export default function HomePage() {
     </>
   );
 }
+
+    
