@@ -81,7 +81,7 @@ export default function HomePage() {
             <div className="relative z-20 flex flex-col h-full w-full">
               <div className="flex-grow flex flex-col justify-center items-center container">
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">Welcome to Les 24hr du Code</h1>
-                <p className="text-lg md:text-xl text-primary-foreground/90 mt-2 font-light">The ultimate coding challenge in Mauritius.</p>
+                <p className="text-lg md:text-xl text-primary-foreground/90 mt-2 font-light">A unique Vibe Coding Challenge in Mauritius.</p>
               </div>
             </div>
         </section>
