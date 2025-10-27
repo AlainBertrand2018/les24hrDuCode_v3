@@ -34,7 +34,7 @@ export default function RootLayout({
         <link rel="preload" href="/videos/A Nation Digital Future_en.mp4" as="video" type="video/mp4" />
       </head>
       <body className={`${poppins.variable} font-sans antialiased`}>
-        <div className="flex flex-col min-h-screen pb-48">
+        <div className="flex flex-col min-h-screen pb-56">
           {children}
         </div>
         <div className="fixed bottom-0 left-0 right-0 z-50">
