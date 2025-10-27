@@ -404,7 +404,7 @@ export default function HomePage() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 md:py-32">
+        <section id="about" className="py-16 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-16">
                 <h2 className="text-6xl md:text-7xl font-bold">What is Les 24hr du Code?</h2>
@@ -435,7 +435,7 @@ export default function HomePage() {
         </section>
         
         {/* Concept Video Section */}
-        <section id="concept-video" className="py-20 md:py-32 bg-background">
+        <section id="concept-video" className="py-16 md:py-24 bg-background">
             <div className="container mx-auto text-center px-4 md:px-6">
                 <div className="space-y-4 mb-12">
                     <h2 className="text-6xl md:text-7xl font-bold">Understanding The Vision</h2>
@@ -450,7 +450,7 @@ export default function HomePage() {
         </section>
         
         {/* Event Timeline Section */}
-        <section id="schedule" className="py-20 md:py-32 bg-card">
+        <section id="schedule" className="py-16 md:py-24 bg-card">
            <div className="container mx-auto text-center px-4 md:px-6">
                 <div className="space-y-4 mb-16">
                     <h2 className="text-6xl md:text-7xl font-bold">TIMELINE</h2>
@@ -480,7 +480,7 @@ export default function HomePage() {
         </section>
 
         {/* Register Your Team Section */}
-        <section id="teams" className="py-20 md:py-32 bg-background">
+        <section id="teams" className="py-16 md:py-24 bg-background">
           <div className="container mx-auto text-center px-4 md:px-6">
             <div className="space-y-4 mb-12">
               <h2 className="text-6xl md:text-7xl font-bold">Register Your Team</h2>
@@ -495,7 +495,7 @@ export default function HomePage() {
         
         {/* Speakers Section */}
         {isClient && (
-        <section id="speakers" className="py-20 md:py-32 bg-card">
+        <section id="speakers" className="py-16 md:py-24 bg-card">
            <div className="container mx-auto text-center px-4 md:px-6">
             <div className="space-y-4 mb-16">
                 <h2 className="text-6xl md:text-7xl font-bold">THE SPEAKERS</h2>
@@ -525,7 +525,7 @@ export default function HomePage() {
 
         {/* Mentors Section */}
         {isClient && (
-        <section id="mentors" className="py-20 md:py-32 bg-background">
+        <section id="mentors" className="py-16 md:py-24 bg-background">
            <div className="container mx-auto text-center px-4 md:px-6">
             <div className="space-y-4 mb-16">
               <h2 className="text-6xl md:text-7xl font-bold">THE MENTORS</h2>
@@ -557,7 +557,7 @@ export default function HomePage() {
         )}
         
         {/* Blog Section */}
-        <section id="blog" className="py-20 md:py-32 bg-card">
+        <section id="blog" className="py-16 md:py-24 bg-card">
            <div className="container mx-auto text-center px-4 md:px-6">
             <div className="space-y-4 mb-16">
                 <h2 className="text-6xl md:text-7xl font-bold">THE LATEST</h2>
@@ -593,7 +593,7 @@ export default function HomePage() {
         </section>
         
         {/* FAQ Section */}
-        <section id="faq" className="py-20 md:py-32 bg-background">
+        <section id="faq" className="py-16 md:py-24 bg-background">
           <div className="container mx-auto max-w-4xl px-4 md:px-6">
             <div className="space-y-4 mb-12 text-center">
                 <h2 className="text-6xl md:text-7xl font-bold">FAQs</h2>
@@ -612,7 +612,7 @@ export default function HomePage() {
         </section>
 
         {/* Info & Contact Section */}
-        <section id="contact" className="py-20 md:py-32 bg-card">
+        <section id="contact" className="py-16 md:py-24 bg-card">
            <div className="container mx-auto max-w-4xl px-4 md:px-6">
               <div className="mb-12 text-center">
                 <h2 className="text-6xl md:text-7xl font-bold">Get In Touch</h2>
