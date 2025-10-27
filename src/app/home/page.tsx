@@ -410,7 +410,9 @@ export default function HomePage() {
                 <p className="text-muted-foreground mt-4 text-lg font-light">
                   More than just a hackathon, Les 24hr du Code is a unique, 24-hour crucible for AI-driven innovation. We bring together 100 teams of two founders—including students, professionals, intrapreneurs, and entrepreneurs—all united by a business idea and an interest in AI. After an initial selection, 16 finalists spend 24 intensive hours using "vibe coding" to solve digital challenges and deliver a functional Minimum Viable Product (MVP). Challenge your limits in code, collaboration, and creativity.
                 </p>
-                <Button variant="link" className="mt-4 px-0" onClick={() => setIsLearnMoreModalOpen(true)}>Learn More &rarr;</Button>
+                <div className="mt-4 flex justify-center">
+                    <Button onClick={() => setIsLearnMoreModalOpen(true)}>Learn More</Button>
+                </div>
             </div>
           </div>
         </section>
