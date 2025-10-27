@@ -81,7 +81,7 @@ export default function HomePage() {
             <div className="relative z-20 flex flex-col h-full w-full">
               <div className="flex-grow flex flex-col justify-center items-center container">
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">Welcome to Les 24hr du Code</h1>
-                <p className="text-lg md:text-xl text-primary-foreground/90 mt-2">The ultimate coding challenge in Mauritius.</p>
+                <p className="text-lg md:text-xl text-primary-foreground/90 mt-2 font-light">The ultimate coding challenge in Mauritius.</p>
               </div>
             </div>
         </section>
@@ -100,7 +100,7 @@ export default function HomePage() {
             </div>
             <div className="text-left">
                 <h2 className="text-3xl font-bold">What is "Les 24hr du Code"?</h2>
-                <p className="text-muted-foreground mt-4 text-lg">
+                <p className="text-muted-foreground mt-4 text-lg font-light">
                   More than just a hackathon, Les 24hr du Code is a unique, 24-hour crucible for AI-driven innovation. We bring together 100 teams of two founders—including students, professionals, intrapreneurs, and entrepreneurs—all united by a business idea and an interest in AI. After an initial selection, 16 finalists spend 24 intensive hours using "vibe coding" to solve digital challenges and deliver a functional Minimum Viable Product (MVP). Challenge your limits in code, collaboration, and creativity.
                 </p>
             </div>
@@ -111,7 +111,7 @@ export default function HomePage() {
         <section id="teams" className="h-screen flex flex-col justify-center items-center bg-card">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Register Your Team</h2>
-            <p className="text-muted-foreground mt-4">Ready to take on the challenge? Form your team and get ready to build something amazing.</p>
+            <p className="text-muted-foreground mt-4 font-light">Ready to take on the challenge? Form your team and get ready to build something amazing.</p>
             <Button size="lg" className="mt-6">Register Now</Button>
             <Button variant="link" className="mt-2 block mx-auto">View teams &rarr;</Button>
           </div>
@@ -121,7 +121,7 @@ export default function HomePage() {
         <section id="schedule" className="h-screen flex flex-col justify-center items-center bg-background">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Event Timeline</h2>
-             <p className="text-muted-foreground mt-4">Key dates and events for the competition.</p>
+             <p className="text-muted-foreground mt-4 font-light">Key dates and events for the competition.</p>
             <div className="h-40 flex items-center justify-center bg-muted rounded-lg mt-6">
               <p className="text-muted-foreground">[Timeline Graphic Here]</p>
             </div>
@@ -133,7 +133,7 @@ export default function HomePage() {
         <section id="speakers" className="h-screen flex flex-col justify-center items-center bg-card">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Featured Speakers</h2>
-             <p className="text-muted-foreground mt-4">Learn from industry leaders and experts.</p>
+             <p className="text-muted-foreground mt-4 font-light">Learn from industry leaders and experts.</p>
             <div className="h-40 flex items-center justify-center bg-muted rounded-lg mt-6">
               <p className="text-muted-foreground">[Speaker Cards Here]</p>
             </div>
@@ -145,7 +145,7 @@ export default function HomePage() {
         <section id="mentors" className="h-screen flex flex-col justify-center items-center bg-background">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Our Mentors</h2>
-             <p className="text-muted-foreground mt-4">Get guidance from experienced professionals.</p>
+             <p className="text-muted-foreground mt-4 font-light">Get guidance from experienced professionals.</p>
             <div className="h-40 flex items-center justify-center bg-muted rounded-lg mt-6">
               <p className="text-muted-foreground">[Mentor Cards Here]</p>
             </div>
@@ -157,7 +157,7 @@ export default function HomePage() {
         <section id="blog" className="h-screen flex flex-col justify-center items-center bg-card">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Latest Articles</h2>
-             <p className="text-muted-foreground mt-4">News and updates from the team.</p>
+             <p className="text-muted-foreground mt-4 font-light">News and updates from the team.</p>
             <div className="h-40 flex items-center justify-center bg-muted rounded-lg mt-6">
               <p className="text-muted-foreground">[Article Previews Here]</p>
             </div>
@@ -170,7 +170,7 @@ export default function HomePage() {
           <div className="container mx-auto max-w-3xl">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
-                <p className="text-muted-foreground mt-4">
+                <p className="text-muted-foreground mt-4 font-light">
                     Find answers to common questions about Les 24hr du Code.
                 </p>
             </div>
@@ -178,7 +178,7 @@ export default function HomePage() {
                 {faqItems.map((item, index) => (
                     <AccordionItem key={index} value={`item-${index + 1}`}>
                         <AccordionTrigger className="text-lg font-semibold">{item.question}</AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground">
+                        <AccordionContent className="text-muted-foreground font-light">
                             {item.answer}
                         </AccordionContent>
                     </AccordionItem>
@@ -191,7 +191,7 @@ export default function HomePage() {
         <section id="contact" className="h-screen flex flex-col justify-center items-center bg-primary/10">
            <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold">Info & Contact</h2>
-             <p className="text-muted-foreground mt-4">Have questions? Get in touch with us.</p>
+             <p className="text-muted-foreground mt-4 font-light">Have questions? Get in touch with us.</p>
             <div className="mt-6">
               <p>contact@24hrducode.com</p>
             </div>
