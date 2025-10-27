@@ -23,6 +23,7 @@ import * as z from 'zod';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import LearnMoreModal from '@/components/learn-more-modal';
 
 
 const contactFormSchema = z.object({
@@ -326,6 +327,8 @@ export default function HomePage() {
   const [isClient, setIsClient] = useState(false);
   const [isContactFormSubmitting, setContactFormSubmitting] = useState(false);
   const [isContactFormSubmitted, setContactFormSubmitted] = useState(false);
+  const [isLearnMoreModalOpen, setIsLearnMoreModalOpen] = useState(false);
+
 
   const contactForm = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
@@ -407,6 +410,7 @@ export default function HomePage() {
                 <p className="text-muted-foreground mt-4 text-lg font-light">
                   More than just a hackathon, Les 24hr du Code is a unique, 24-hour crucible for AI-driven innovation. We bring together 100 teams of two founders—including students, professionals, intrapreneurs, and entrepreneurs—all united by a business idea and an interest in AI. After an initial selection, 16 finalists spend 24 intensive hours using "vibe coding" to solve digital challenges and deliver a functional Minimum Viable Product (MVP). Challenge your limits in code, collaboration, and creativity.
                 </p>
+                <Button variant="link" className="mt-4 px-0" onClick={() => setIsLearnMoreModalOpen(true)}>Learn More &rarr;</Button>
             </div>
           </div>
         </section>
@@ -620,6 +624,10 @@ export default function HomePage() {
         isOpen={isWaitlistModalOpen}
         onClose={() => setIsWaitlistModalOpen(false)}
         lang={lang}
+      />
+      <LearnMoreModal
+        isOpen={isLearnMoreModalOpen}
+        onClose={() => setIsLearnMoreModalOpen(false)}
       />
     </>
   );
