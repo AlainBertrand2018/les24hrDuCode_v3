@@ -88,12 +88,23 @@ export default function HomePage() {
 
         {/* About Section */}
         <section id="about" className="h-screen flex flex-col justify-center items-center bg-background">
-          <div className="container mx-auto text-center max-w-3xl">
-            <h2 className="text-3xl font-bold">What is "Les 24hr du Code"?</h2>
-            <p className="text-muted-foreground mt-4">
-              More than just a hackathon, it's a celebration of code, creativity, and the Mauritian spirit. 
-              It's a place where innovation thrives and the tech community comes together.
-            </p>
+          <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center max-w-5xl">
+            <div className="flex justify-center">
+                <Image
+                    src="/images/Base_Logo_dk.png"
+                    alt="Les 24hr du Code Logo"
+                    width={585}
+                    height={585}
+                    className="w-full h-auto max-w-[320px]"
+                />
+            </div>
+            <div className="text-left">
+                <h2 className="text-3xl font-bold">What is "Les 24hr du Code"?</h2>
+                <p className="text-muted-foreground mt-4 text-lg">
+                  More than just a hackathon, it's a celebration of code, creativity, and the Mauritian spirit. 
+                  It's a place where innovation thrives and the tech community comes together.
+                </p>
+            </div>
           </div>
         </section>
         
