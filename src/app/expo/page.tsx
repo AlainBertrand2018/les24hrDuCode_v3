@@ -82,16 +82,14 @@ export default function ExpoPage() {
       {/* Hero Section */}
       <section className="relative h-screen w-full flex items-center justify-center text-center text-white">
         <div className="absolute inset-0 bg-black/60 z-10" />
-        {heroImage && (
-             <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                fill
-                className="object-cover"
-                data-ai-hint={heroImage.imageHint}
-                priority
-            />
-        )}
+        <Image
+          src="/images/SVICC.webp"
+          alt="SVICC venue for expo"
+          fill
+          className="object-cover"
+          data-ai-hint="conference venue"
+          priority
+        />
         <div className="relative z-20 container px-4 md:px-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">Exhibit at the Heart of Mauritian Tech</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-primary-foreground/90">

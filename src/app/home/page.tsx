@@ -387,7 +387,7 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="h-screen flex flex-col justify-center items-center text-center relative text-primary-foreground">
             <Image
-                src="/images/SVICC.webp"
+                src="/images/home_bk.webp"
                 alt="SVICC venue background"
                 fill
                 className="object-cover blur-sm"
