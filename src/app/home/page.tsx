@@ -387,12 +387,12 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="h-screen flex flex-col justify-center items-center text-center relative text-primary-foreground">
             <Image
-                src="/images/home_bk.webp"
-                alt="Hackathon event background"
+                src="/images/SVICC.webp"
+                alt="SVICC venue background"
                 fill
                 className="object-cover blur-sm"
                 priority
-                data-ai-hint="hackathon event"
+                data-ai-hint="conference venue"
             />
             <div className="absolute inset-0 bg-black/40 z-10" />
             <div className="relative z-20 flex flex-col w-full">
